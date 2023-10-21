@@ -7,7 +7,7 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## About Laravel
+## Sistema de opiniones
 
 Primer proyecto con Laravel creando un sistema de opiniones con todos sus respectivos controladores, politicas, vistas y modelos para que funcinone correctamente y con los permisos adecuados.
 
