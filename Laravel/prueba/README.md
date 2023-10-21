@@ -9,6 +9,10 @@
 
 ## About Laravel
 
+Primer proyecto con Laravel creando un sistema de opiniones con todos sus respectivos controladores, politicas, vistas y modelos para que funcinone correctamente y con los permisos adecuados.
+
+## About Laravel
+
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
 - [Simple, fast routing engine](https://laravel.com/docs/routing).
