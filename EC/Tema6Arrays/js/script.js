@@ -155,12 +155,6 @@ function ejercicio4() {
     arrayej4.innerHTML = "Los elementos diferentes son: [" + arraydiferencias + "]";
 }
 
-function ejercicio5() {
-
-}
-function ejercicio6() {
-
-}
 function ejercicio7() {
     var arrayNombres = [];
     var datos;
@@ -205,7 +199,7 @@ El funcionamiento es el siguiente:
 Cuando llega un cliente se le pregunta cuántos son. Como el programa no está preparado para
 colocar a grupos mayores a 4, si un cliente solicita una mesa con mas comensales (pej, 6), el
 programa dará el mensaje “Lo siento, no admitimos grupos de 6, haga grupos de 4 personas
-como máximo e intente de nuevo” y volverá a preguntar.dddd
+como máximo e intente de nuevo” y volverá a preguntar.
 Para cada grupo nuevo que llega, se busca siempre la primera mesa libre (con 0 personas). Si
 no quedan mesas libres, se busca una donde haya hueco para todo el grupo (por ejemplo si el
 grupo es de dos personas, se podrá colocar en mesas donde haya una o dos personas).
