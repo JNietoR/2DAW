@@ -189,9 +189,6 @@ function ejercicio7() {
 
     arrayej7.innerHTML = "[" + arrayNombres + "] --> " + resultado;
 }
-function ejercicio8() {
-
-}   
 
 /*Un restaurante nos ha encargado una aplicación para colocar a los clientes en sus
 mesas. En una mesa se pueden sentar de 0 (mesa vacía) a 4 comensales (mesa llena).
@@ -217,7 +214,7 @@ function ejercicio9() {
     var numMesas;
     var numPersonas;
     var mensajePersonas;
-    
+
     do {
         numMesas = parseInt(prompt("Indica el número de mesas"));
     } while (numMesas <= 0);
@@ -230,7 +227,7 @@ function ejercicio9() {
 
     do {
         numPersonas = parseInt(prompt("¿Cuántas personas son?"));
-        
+
         if (numPersonas <= 0) {
             console.log("¡Gracias por visitarnos!");
             break;
@@ -240,12 +237,7 @@ function ejercicio9() {
             var sentado = false;
 
             for (var i = 0; i < mesas.length; i++) {
-                if (mesas[i] === 0) {
-                    mesas[i] = numPersonas;
-                    mensajePersonas = "Sientese en la mesa " + i;
-                    sentado = true;
-                    break;
-                } else if (mesas[i] >= numPersonas && mesas[i] < 4) {
+                if (mesas[i] + numPersonas <= 4) {
                     mesas[i] += numPersonas;
                     mensajePersonas = "Sientese en la mesa " + i;
                     sentado = true;
