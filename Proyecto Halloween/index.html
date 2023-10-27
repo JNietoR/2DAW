@@ -13,20 +13,20 @@
     <link rel="icon" href="./assets/img/favicon.ico" type="image/x-icon">
 </head>
 
-<body class="bg-black text-white">
+<body class="fondo bg-black text-white">
 
     <header>
         <!-- #Header-->
 
         <nav class="navbar navbar-expand-lg bg-orange">
-            <div class="container-fluid bg-orange">
+            <div class="container-fluid">
                 <img src="assets/img/trick-treat5-img.png" alt="" class="nav__logo-img" />
-                <a class="navbar-brand" href="#inicio">Home</a>
+                    <a class="navbar-brand" href="#inicio">Home</a>
                 <button class="navbar-toggler mb-1" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse bg-orange" id="navbarNav">
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="#imagecarousel">Galeria</a>
@@ -42,11 +42,12 @@
                         </li>
                     </ul>
                 </div>
+                </div>
             </div>
         </nav>
         <!-- FinHeader-->
     </header>
-    <main>
+    <main id="main">
         <section id="inicio">
             <div class="container px-4 px-lg-5 h-100">
                 <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center">
@@ -54,7 +55,7 @@
                         <h1 class="text-white font-weight-bold text-center m-4">¿Que es Halloween?</h1>
                     </div>
                     <hr class="divider" />
-                    <div class="col-lg-8 align-self-baseline">
+                    <div class="col-lg-8 align-self-baseline fw-bold">
                         <p class="text-white-75 mb-5">Aunque actualmente es un día de disfraces, dulces y niños sus
                             orígenes no son tan alegres. La fiesta se celebraba en Irlanda cuando la temporada de
                             cosechas tocaba a su fin y daba comienzo el “año nuevo celta” coincidiendo con el solsticio
@@ -89,19 +90,20 @@
                         </div>
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <img src="./assets/img/halloween-scary-skeleton.jpg" class="mx-auto d-block w-50" alt="...">
+                                <img src="./assets/img/halloween-scary-skeleton.jpg" class="mx-auto d-block w-75"
+                                    alt="...">
                             </div>
                             <div class="carousel-item">
-                                <img src="./assets/img/bruja_1.jpg" class="mx-auto d-block w-50 " alt="...">
+                                <img src="./assets/img/bruja_1.jpg" class="mx-auto d-block w-75 " alt="...">
                             </div>
                             <div class="carousel-item">
-                                <img src="./assets/img/cala.jpg" class="mx-auto d-block w-50" alt="...">
+                                <img src="./assets/img/cala.jpg" class="mx-auto d-block w-75" alt="...">
                             </div>
                             <div class="carousel-item">
-                                <img src="./assets/img/vam.jpg" class="mx-auto d-block w-50" alt="...">
+                                <img src="./assets/img/vam.jpg" class="mx-auto d-block w-75" alt="...">
                             </div>
                             <div class="carousel-item">
-                                <img src="./assets/img/fantasma.jpg" class="mx-auto d-block w-50" alt="...">
+                                <img src="./assets/img/fantasma.jpg" class="mx-auto d-block w-75" alt="...">
                             </div>
                         </div>
                         <br>
@@ -127,50 +129,51 @@
                 <div class="container">
                     <div class="row align-items-center justify-content-center">
                         <div class="col-lg-auto col-md-6 col-sm-12 col-12 mb-4">
-                            <div class="card border-warning mb-4 mx-auto" style="width: 18rem;">
-                                <img src="./images/darksouls1.jpg" class="card-img-top img-fluid" alt="joya">
-                                <div class="card-body text-warning bg-dark">
-                                    <h5 class="card-title">DARK SOULS</h5>
-                                    <p class="card-text">Primer juego de la famosa saga Dark Souls</p>
-                                    <a href="#"
-                                        class="btn btn-warning text-black border-warning d-block mx-auto">Comprar -
-                                        29.99€</a>
+                            <div class="card tarjetas mb-4 mx-auto" style="width: 18rem; height: 28rem;">
+                                <img src="./assets/img/receta1.jpg" class="card-img-top img-fluid imagenreceta" alt="">
+                                <div class="card-body tarjetas bg-dark">
+                                    <h5 class="card-title">GALLETAS ARAÑA</h5>
+                                    <p class="card-text">Estas adorables galletas araña tienen el espíritu de la fiesta
+                                        y sin dar repelús.</p>
+                                        <br>
+                                    <a href="https://www.directoalpaladar.com/postres/como-hacer-las-galletas-arana-mas-adorables-de-halloween" target="_blank"
+                                        class="btn botontarjeta tarjetas d-block mx-auto">Receta</a>
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-auto col-md-6 col-sm-12 col-12 mb-4">
-                            <div class="card border-warning mb-4 mx-auto" style="width: 18rem;">
-                                <img src="./images/darksouls2.jpg" class="card-img-top img-fluid" alt="meh">
-                                <div class="card-body text-warning bg-dark">
-                                    <h5 class="card-title">DARK SOULS II</h5>
-                                    <p class="card-text">Segunda entrega de la saga Dark Souls</p>
-                                    <a href="#"
-                                        class="btn btn-warning text-black border-warning d-block mx-auto">Comprar -
-                                        24.99€</a>
+                            <div class="card tarjetas mb-4 mx-auto" style="width: 18rem; height: 28rem;">
+                                <img src="./assets/img/receta2.jpg" class="card-img-top img-fluid imagenreceta" alt="">
+                                <div class="card-body tarjetas bg-dark">
+                                    <h5 class="card-title">OJOS DE GELATINA</h5>
+                                    <p class="card-text">Si te gusta celebrar la Noche de brujas, esta receta sencilla
+                                        será un encanto para ellos. </p>
+                                        <br>
+                                    <a href="https://www.directoalpaladar.com.mx/postres/ojos-gelatina-receta-sencilla-para-noche-brujas" target="_blank"
+                                        class="btn botontarjeta tarjetas d-block mx-auto">Receta</a>
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-auto col-md-6 col-sm-12 col-12 mb-4">
-                            <div class="card border-warning mb-4 mx-auto" style="width: 18rem;">
-                                <img src="./images/darksouls3.jpg" class="card-img-top img-fluid" alt="BOF">
-                                <div class="card-body text-warning bg-dark">
-                                    <h5 class="card-title">DARK SOULS III</h5>
-                                    <p class="card-text">Capitulo final de la exitosa saga Dark Souls</p>
-                                    <a href="#"
-                                        class="btn btn-warning text-black border-warning d-block mx-auto">Comprar -
-                                        34.99€</a>
+                            <div class="card tarjetas mb-4 mx-auto" style="width: 18rem; height: 28rem;">
+                                <img src="./assets/img/receta3.jpg" class="card-img-top img-fluid imagenreceta" alt="">
+                                <div class="card-body tarjetas bg-dark">
+                                    <h5 class="card-title">ESCOBAS DE BRUJAS</h5>
+                                    <p class="card-text">Si te apetece rendirte ante el encanto tenebroso de Halloween
+                                        estas escobas de bruja de queso pueden ser el aperitivo perfecto.</p>
+                                    <a href="https://www.directoalpaladar.com/recetas-de-aperitivos/como-hacer-escobas-brujas-queso-aperitivo-facil-para-halloween" target="_blank"
+                                        class="btn botontarjeta tarjetas d-block mx-auto">Receta</a>
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-auto col-md-6 col-sm-12 col-12 mb-4">
-                            <div class="card border-warning mb-4 mx-auto" style="width: 18rem;">
-                                <img src="./images/eldenring.jpg" class="card-img-top img-fluid" alt="BOOOFFFF">
-                                <div class="card-body text-warning bg-dark">
-                                    <h5 class="card-title">ELDEN RING</h5>
-                                    <p class="card-text">Nuevo juego escrito por George R.R. Martin</p>
-                                    <a href="#"
-                                        class="btn btn-warning text-black border-warning d-block mx-auto">Comprar -
-                                        39.99€</a>
+                            <div class="card tarjetas mb-4 mx-auto" style="width: 18rem; height: 28rem;">
+                                <img src="./assets/img/receta4.jpg" class="card-img-top img-fluid imagenreceta" alt="">
+                                <div class="card-body tarjetas bg-dark">
+                                    <h5 class="card-title">PIRUTETAS MOMIA</h5>
+                                    <p class="card-text"> Estas piruletas momia de Oreo son la mar de simpáticas para los niños, así que no dejéis de hacerlas para ellos.</p>
+                                    <a href="https://www.directoalpaladar.com/postres/piruletas-momia-de-oreo-receta-de-halloween" target="_blank"
+                                        class="btn botontarjeta tarjetas d-block mx-auto">Receta</a>
                                 </div>
                             </div>
                         </div>
@@ -179,50 +182,47 @@
                 <div class="container">
                     <div class="row align-items-center justify-content-center">
                         <div class="col-lg-auto col-md-6 col-sm-12 col-12 mb-4">
-                            <div class="card border-warning mb-4 mx-auto" style="width: 18rem;">
-                                <img src="./images/bloodborne.jpg" class="card-img-top img-fluid" alt="nice">
-                                <div class="card-body text-warning bg-dark">
-                                    <h5 class="card-title">BLOODBORNE</h5>
-                                    <p class="card-text">Souls ambientado en la época victoriana</p>
-                                    <a href="#"
-                                        class="btn btn-warning text-black border-warning d-block mx-auto">Comprar -
-                                        19.99€</a>
+                            <div class="card tarjetas mb-4 mx-auto" style="width: 18rem; height: 28rem;">
+                                <img src="./assets/img/receta5.jpg" class="card-img-top img-fluid imagenreceta" alt="">
+                                <div class="card-body tarjetas bg-dark">
+                                    <h5 class="card-title">GALLETAS MOMIA</h5>
+                                    <p class="card-text">Estas galletas momia de calabaza son estupendas para hacer algo especial y entrentenido, no hacen falta moldes especiales ni un acabado perfecto.</p>
+                                    <a href="https://www.directoalpaladar.com/postres/galletas-momia-calabaza-divertida-receta-para-halloween-que-encantara-a-ninos" target="_blank"
+                                        class="btn botontarjeta tarjetas d-block mx-auto">Receta</a>
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-auto col-md-6 col-sm-12 col-12 mb-4">
-                            <div class="card border-warning mb-4 mx-auto" style="width: 18rem;">
-                                <img src="./images/bloodborne2.jpg" class="card-img-top img-fluid" alt="ojala">
-                                <div class="card-body text-warning bg-dark">
-                                    <h5 class="card-title">BLOODBORNE 2</h5>
-                                    <p class="card-text">Titulo sin fecha de lanzamiento de la saga Bloodborne</p>
-                                    <a href="#"
-                                        class="btn btn-warning text-black border-warning d-block mx-auto">Comprar - Sin
-                                        Precio</a>
+                            <div class="card tarjetas mb-4 mx-auto" style="width: 18rem; height: 28rem;">
+                                <img src="./assets/img/receta6.jpg" class="card-img-top img-fluid imagenreceta" alt="">
+                                <div class="card-body tarjetas bg-dark">
+                                    <h5 class="card-title">FRANKENSTEIN</h5>
+                                    <p class="card-text">Preparar un monstruo de Frankenstein hecho con kiwi, el postre saludable bajo en azúcar, ideal para una merienda de Halloween.</p>
+                                    <a href="https://www.directoalpaladar.com/postres/monstruo-frankenstein-hecho-kiwi-postre-saludable-azucar-anadido-ideal-para-merienda-halloween" target="_blank"
+                                        class="btn botontarjeta tarjetas d-block mx-auto">Receta</a>
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-auto col-md-6 col-sm-12 col-12 mb-4">
-                            <div class="card border-warning mb-4 mx-auto" style="width: 18rem;">
-                                <img src="./images/sekiro.jpg" class="card-img-top img-fluid" alt="skilled">
-                                <div class="card-body text-warning bg-dark">
-                                    <h5 class="card-title">SEKIRO</h5>
-                                    <p class="card-text">Souls ambientado en Japón con un ritmo mas frenético</p>
-                                    <a href="#"
-                                        class="btn btn-warning text-black border-warning d-block mx-auto">Comprar -
-                                        29.99€</a>
+                            <div class="card tarjetas mb-4 mx-auto" style="width: 18rem; height: 28rem;">
+                                <img src="./assets/img/receta7.jpg" class="card-img-top img-fluid imagenreceta" alt="">
+                                <div class="card-body tarjetas bg-dark">
+                                    <h5 class="card-title">DIP CEMENTERIO</h5>
+                                    <p class="card-text">Una receta fácil y rápida de preparar con la que vais a dar la nota por dos razones: Su deliciosa combinación de sabores y su estética.</p>
+                                    <a href="https://www.directoalpaladar.com/recetas-de-aperitivos/dip-cementerio-para-halloween-receta-facil-rapida-muy-divertida" target="_blank"
+                                        class="btn botontarjeta tarjetas d-block mx-auto">Receta</a>
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-auto col-md-6 col-sm-12 col-12 mb-4">
-                            <div class="card border-warning mb-4 mx-auto" style="width: 18rem;">
-                                <img src="./images/armoredcore.jpg" class="card-img-top img-fluid" alt="mucho mecha">
-                                <div class="card-body text-warning bg-dark">
-                                    <h5 class="card-title">ARMORED CORE VI</h5>
-                                    <p class="card-text">Último juego de la saga Armored Core</p>
-                                    <a href="#"
-                                        class="btn btn-warning text-black border-warning d-block mx-auto">Comprar -
-                                        49.99€</a>
+                            <div class="card tarjetas mb-4 mx-auto" style="width: 18rem; height: 28rem;">
+                                <img src="./assets/img/receta8.jpg" class="card-img-top img-fluid imagenreceta" alt="">
+                                <div class="card-body tarjetas bg-dark">
+                                    <h5 class="card-title">TARTA CEREBRO</h5>
+                                    <p class="card-text">Existen múltiples maneras de prepararla, pero esta es la más fácil y rápida. Sin horno y lista en 30 minutos.</p>
+                                    <br>
+                                    <a href="https://www.directoalpaladar.com/postres/tarta-cerebro-para-halloween-receta-facil-rapida-horno" target="_blank"
+                                        class="btn botontarjeta tarjetas d-block mx-auto">Receta</a>
                                 </div>
                             </div>
                         </div>
@@ -231,8 +231,7 @@
         </section>
         <!--Fin Recetas-->
         <!-- Entradas-->
-        <section class="page-section bg-black text-white pt-4" id="Entradas">
-            <hr class="divider" />
+        <section class="page-section text-white pt-4" id="Entradas">
             <div class="container px-4 px-lg-5 text-center">
                 <h2 class="mb-4">¡Obtén tu entrada con un click!</h2>
                 <a class="btn btn-light btn-xl mb-4" id="myBtn">Comprar</a>
@@ -241,44 +240,56 @@
                 <span class="close">&times;</span>
                 <img class="modal-content" id="img01">
             </div>
-            <hr class="divider" />
         </section>
         <!--FinEntradas-->
         <!--Juego-->
         <section class="juego" id="juego">
             <div class="result_field">
-              <div class="result_images justify-content-center">
-                <span class="user_result">
-                  <img src="./assets/img/rock.png" alt="" />
-                </span>
-                <span class="cpu_result">
-                  <img src="./assets/img/rock.png" alt="" />
-                </span>
-              </div>
-              <div class="result">¡Piedra, papel, tijera, 1, 2 y 3!</div>
+                <div class="result_images justify-content-center">
+                    <span class="user_result">
+                        <img src="./assets/img/rock.png" alt="" />
+                    </span>
+                    <span class="cpu_result">
+                        <img src="./assets/img/rock.png" alt="" />
+                    </span>
+                </div>
+                <div class="result">¡Piedra, papel, tijera, 1, 2 y 3!</div>
             </div>
-      
+
             <div class="option_images">
-              <span class="option_image">
-                <img src="./assets/img/rock.png" alt="" />
-                <p>Piedra</p>
-              </span>
-              <span class="option_image">
-                <img src="./assets/img/paper.png" alt="" />
-                <p>Papel</p>
-              </span>
-              <span class="option_image">
-                <img src="./assets/img/scissors.png" alt="" />
-                <p>Tijera</p>
-              </span>
+                <span class="option_image">
+                    <img src="./assets/img/rock.png" alt="" />
+                    <p>Piedra</p>
+                </span>
+                <span class="option_image">
+                    <img src="./assets/img/paper.png" alt="" />
+                    <p>Papel</p>
+                </span>
+                <span class="option_image">
+                    <img src="./assets/img/scissors.png" alt="" />
+                    <p>Tijera</p>
+                </span>
             </div>
-          </section>
+            <div class="newsletter-subscribe mt-5 container w-50">
+                <div class="container">
+                    <div class="intro">
+                        <h2 class="text-center newsletter">Subscribete para las últimas noticias</h2>
+                        <p class="text-center">No te pierdas los últimos espectáculos, recetas o concursos para este halloween</p>
+                    </div>
+                    <form class="form-inline" method="post">
+                        <div class="form-group"><input class="form-control" type="email" name="email" placeholder="Your Email"></div>
+                        <div class="form-group text-center"><button class="btn botonnaranja mt-1" type="button">Subscribe </button></div>
+                    </form>
+                </div>
+            </div>
+        </section>
         <!--FinJuego-->
+                
     </main>
     <!--Footer-->
     <footer>
         <div class="container-fluid bg-orange">
-            <footer class="bg-orange text-warning text-center text-lg-start">
+            <footer class="bg-orange tarjetas text-center text-lg-start">
                 <!-- Grid container -->
                 <div class="container p-4">
                     <!-- Grid row -->

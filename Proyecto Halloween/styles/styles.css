@@ -1,3 +1,8 @@
+.fondo{
+  background-image: url('../assets/img/wallpaper.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 #myModal {
     display: none;
     position: fixed;
@@ -38,18 +43,34 @@
   .nav__logo-img{
     width:40px;
   }
-#inicio{
-  background: rgb(252,71,6);
-background: linear-gradient(180deg, rgba(252,71,6,1) 0%, rgba(0,0,0,1) 75%);
+#juego{
+  background-color:#170f0c;
 }
-#recetas{
-  background: rgb(0,0,0);
-background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(252,71,6,1) 75%);
+.botonnaranja{
+  background-color: rgb(252, 71, 6);
 }
-#Entradas{
-  background: rgb(252,71,6);
-  background: linear-gradient(180deg, rgba(252,71,6,1) 0%, rgba(0,0,0,1) 75%);
+.botonnaranja:hover{
+  border-color:rgb(252, 71, 6);
+  color:rgb(252, 71, 6);
 }
+.imagenreceta{
+  width: 18rem;
+  height: 12rem;;
+}
+.tarjetas{
+  color:rgb(252, 71, 6);
+  border-color:#7d2ae8;
+}
+.botontarjeta:hover{
+  color:white;
+  background-color:#7d2ae8;
+}
+.botontarjeta{
+  background-color: rgb(252, 71, 6);
+  color:black;
+  border-color:rgb(252, 71, 6);
+}
+
 /* juego */
 .juego {
   padding: 2rem 7rem;
