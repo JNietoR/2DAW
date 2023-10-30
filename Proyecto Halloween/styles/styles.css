@@ -99,8 +99,6 @@
   color: black; /* Color del texto */
 }
 
-
-
 .lineainferior::after{
   content: '';
   position: absolute;
@@ -225,7 +223,6 @@
 /* Fantasma */
 
 #ghost {
-  transform: translateX(50%);
   transform-origin: center;
 }
 
