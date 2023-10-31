@@ -222,9 +222,7 @@
 
 /* Fantasma */
 
-#ghost {
-  transform-origin: center;
-}
+
 
 .ghost {
   background: #fff;
@@ -376,3 +374,4 @@
 #ghost.active .ghost {
   animation: none;
 }
+
