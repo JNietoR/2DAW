@@ -33,11 +33,11 @@
                 $comentario = $_GET['comment'];
                 //con a+ agregara al final del fichero si queremos que se sobreescriba cada vez que escribimos podemos utilizar w+
                 $archivo=fopen("comentarios.txt","a+");
-                //escribimos en el fichero que hemos almacenado en la variable anterior agregando un salto de linea al final de la introducción
+                //escribimos en el fichero que hemos almacenado en la variable anterior con . PHP_EOL agregamos un salto de linea al final de la introducción para tener ordenado el documento
                 fwrite($archivo,$comentario. PHP_EOL);
-                //cerramos el fichero
+                //cerramos el fichero despues de modificarlo
                 fclose($archivo);
-                //alamacena el contenido del fichero para imprimirlo 
+                //alamacena el contenido del fichero para imprimirlo tambien podriamos usar fread("comentarios.txt");
                 $completo=file_get_contents("comentarios.txt");
                 //imprime el fichero en html
                 echo $completo;
@@ -47,14 +47,14 @@
                 //compara los datos enviados con los almacenados en el array declarado anteriormente
                 if ($_POST['user'] == $credenciales['user'] && $_POST['password'] == $credenciales['password']) {
                     //imprime por pantalla la fecha y hora en la que ha entrado en el sistema
-                    echo date('l jS \of F Y h:i:s A');
+                    echo "Loged at ". date('l jS \of F Y h:i:s A');
                     ?>
                     <!-- formulario con el metodo get para imprimir el directorio actual -->
                     <form action="index.php" method="get">
                         <div class="flex items-center gap-4 justify-center mt-8">
                             <input type="submit"
                                 class="px-4 py-2 bg-blue-800 rounded text-xs text-white uppercase hover:bg-blue-700"
-                                name="directorioactual" value="Mostrar directorio actual" />
+                                name="directorioactual" value="Show current directory" />
                         </div>
                     </form>
                     <!-- formulario con el metodo get para buscar los ficheros con el nombre indicado -->
@@ -64,25 +64,25 @@
                                 name="fichero" />
                             <input type="submit"
                                 class="px-4 py-2 bg-blue-800 rounded text-xs text-white uppercase hover:bg-blue-700"
-                                name="search" value="Buscar fichero" />
+                                name="search" value="Search file" />
                         </div>
                     </form>
                     <!-- formulario con el metodo get agregar datos a un fichero -->
                     <form action="index.php" method="get">
                         <div class="flex flex-col items-center gap-4 justify-center mt-8">
-                        <label class="text-sm text-gray-700">Deja un comentario</label>
+                        <label class="text-sm text-gray-700">Leave a comment</label>
                             <input type="text" class='rounded shadow border border-gray-300 p-2 mt-1 w-full outline-none'
                                 name="comment" />
                             <input type="submit"
                                 class="px-4 py-2 bg-blue-800 rounded text-xs text-white uppercase hover:bg-blue-700"
-                                name="sendComment" value="Dejar comentario" />
+                                name="sendComment" value="Comment" />
                         </div>
                     </form>
                     <?php
                     //si la comparación de datos falla imprimira un mensaje de error por pantalla
-                } else {
-                    echo "Credencdiales incorrectas";
-                }
+                }else{
+                    echo "Credenciales incorrectas";
+                } 
             }
             ?>
         </div>
