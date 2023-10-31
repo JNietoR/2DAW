@@ -40,7 +40,7 @@
                     echo $filename . "<br>";
                 }
             }
-            //si hemos enviado datos mediante el formulario con metodo get mediante el input "sendComment" escribira en el fichero la información que hemos indicado
+            //si hemos enviado datos mediante el formulario con metodo post mediante el input "sendComment" escribira en el fichero la información que hemos indicado
             if (isset($_POST['sendComment'])) {
                 $comentario = $_POST['comment'];
                 //con a+ agregara al final del fichero si queremos que se sobreescriba cada vez que escribimos podemos utilizar w+
