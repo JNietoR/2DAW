@@ -83,7 +83,18 @@
                     // Los datos de usuario y contraseña son válidos
                     session_start();
                     $_SESSION['iniciada'] = true;
+                    if (!isset($_SESSION['login_time'])) {
+                        // Si no se ha registrado, establece la fecha y hora actual
+                        $_SESSION['login_time'] = date('l jS \of F Y h:i:s A');
+                    }
+
             ?>
+                    <div class="flex items-center gap-4 justify-center mt-8">
+                        <?php
+                        // Imprime la fecha y hora almacenada en la variable de sesión
+                        echo "Loged at " . $_SESSION['login_time'];
+                        ?>
+                    </div>
                     <!-- formulario con el metodo get para imprimir el directorio actual -->
                     <form action="index.php" method="get">
                         <div class="flex items-center gap-4 justify-center mt-8">
