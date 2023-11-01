@@ -18,6 +18,12 @@
             if (isset($_SESSION['iniciada']) && $_SESSION['iniciada'] == true) {
                 // Usuario está autenticado
             ?>
+                <div class="flex items-center gap-4 justify-center mt-8">
+                    <?php
+                    // Imprime la fecha y hora almacenada en la variable de sesión
+                    echo "Loged at " . $_SESSION['login_time'];
+                    ?>
+                </div>
                 <!-- formulario con el metodo get para imprimir el directorio actual -->
                 <form action="ficheros.php" method="get">
                     <div class="flex items-center gap-4 justify-center mt-8">
@@ -25,12 +31,12 @@
                     </div>
                 </form>
                 <div class="flex flex-col items-center gap-4 justify-center mt-8">
-                <?php
-                if (isset($_GET['directorioactual'])) {
-                    echo "El directorio actual es: <br>";
-                    echo getcwd();
-                }
-                ?>
+                    <?php
+                    if (isset($_GET['directorioactual'])) {
+                        echo "El directorio actual es: <br>";
+                        echo getcwd();
+                    }
+                    ?>
                 </div>
                 <!-- formulario con el metodo get para buscar los ficheros con el nombre indicado -->
                 <form action="ficheros.php" method="get">
@@ -40,14 +46,14 @@
                     </div>
                 </form>
                 <div class="flex flex-col items-center gap-4 justify-center mt-8">
-                <?php
-                if (isset($_GET['search'])) {
-                    echo "Los ficheros que cumplen esos criterios son: <br>";
-                    foreach (glob("*" . $_GET['fichero'] . "*") as $filename) {
-                        echo $filename . "<br>";
+                    <?php
+                    if (isset($_GET['search'])) {
+                        echo "Los ficheros que cumplen esos criterios son: <br>";
+                        foreach (glob("*" . $_GET['fichero'] . "*") as $filename) {
+                            echo $filename . "<br>";
+                        }
                     }
-                }
-                ?>
+                    ?>
                 </div>
                 <!-- formulario con el metodo post agregar datos a un fichero -->
                 <form action="ficheros.php" method="POST">
@@ -58,19 +64,19 @@
                     </div>
                 </form>
                 <div class="flex flex-col items-center gap-4 justify-center mt-8">
-            <?php
-                if (isset($_POST['sendComment'])) {
-                    $comentario = $_POST['comment'];
-                    $archivo = fopen("comentarios.txt", "a+");
-                    fwrite($archivo, $comentario . PHP_EOL);
-                    fclose($archivo);
-                    $completo = file_get_contents("comentarios.txt");
-                    echo "La información del fichero comentarios es: <br>";
-                    echo $completo;
-                }
-                ?>
+                    <?php
+                    if (isset($_POST['sendComment'])) {
+                        $comentario = $_POST['comment'];
+                        $archivo = fopen("comentarios.txt", "a+");
+                        fwrite($archivo, $comentario . PHP_EOL);
+                        fclose($archivo);
+                        $completo = file_get_contents("comentarios.txt");
+                        echo "La información del fichero comentarios es: <br>";
+                        echo $completo;
+                    }
+                    ?>
                 </div>
-                <?php
+            <?php
             } else {
                 // Usuario no está autenticado
                 echo "<p>Debes iniciar sesión para acceder a esta página.</p>";

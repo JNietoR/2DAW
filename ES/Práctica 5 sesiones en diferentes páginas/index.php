@@ -16,6 +16,10 @@ if (isset($_POST['login'])) {
     if (mysqli_num_rows($resultado) > 0) {
         session_start();
         $_SESSION['iniciada'] = true;
+        if (!isset($_SESSION['login_time'])) {
+            // Si no se ha registrado, establece la fecha y hora actual
+            $_SESSION['login_time'] = date('l jS \of F Y h:i:s A');
+        }
         header("Location: ficheros.php"); 
     } else {
         echo "<p>Credenciales incorrectos</p>";
