@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Práctica 4 - Ficheros</title>
+    <title>Práctica 5 sesiones diferentes páginas</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
