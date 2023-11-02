@@ -1,3 +1,4 @@
+//funcionamiento del fantasma siguiendo el cursor
 var ghost = document.getElementById('ghost');
 var ghostX = 0;
 var ghostY = 0;
