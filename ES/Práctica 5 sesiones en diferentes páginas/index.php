@@ -9,6 +9,18 @@
 </head>
 
 <body>
+    <!-- 
+    En esta práctica voy a utilizar ambos metodos get y post en los diferentes formularios.
+    En general, GET admite como máximo el envío de unos 500 bytes de información. 
+    Otra gran limitación del método GET es que no permite el envío de archivos adjuntos con el formulario.
+    A parte de todo esto los datos enviados mediante GET se ven en la barra de direcciones del navegador, mientras que con el post no ocurre esto.
+    Además de lo anteriormente dicho existe una regla general que dice que el método GET se debe utilizar en los formularios que no modifican la información, 
+    mientras que el POST en el caso contrario. 
+
+    Dicho esto voy a utilizar post en el formulario de login para que no se muestren las credenciales introducizas en la ruta del navegador, 
+    asi como en el formulario de insercción de datos en el fichero comentarios.txt siendo esto por privacidad además como anteriormente he comentado, se suele usar POST 
+    como regla general si se modifica la información en el servidor.
+    -->
     <div class="h-screen flex flex-col justify-center items-center bg-blue-100">
         <h1 class="mb-6 text-3xl">- FILE MENU -</h1>
         <div class="w-full sm:max-w-md py-4 px-6 bg-white shadow sm:rounded">
@@ -169,7 +181,8 @@
                     <?php
                     //si se utiliza el formulario para dejar comentarios
                     if (isset($_POST['sendComment'])) {
-                        //como solo tiene permisos de lectura lo abrimo con r solo dandole solo esos permisos
+                        //IMPORTANTE EL FICHERO comentarios.txt DEBE EXISTIR PARA PODER ABRIRLO SI NO DARA FALLO
+                        //como solo tiene permisos de lectura lo abrimo con r solo dandole solo esos permisos 
                         $archivo = fopen("comentarios.txt", "r");
                         //cerramos el fichero
                         fclose($archivo);
