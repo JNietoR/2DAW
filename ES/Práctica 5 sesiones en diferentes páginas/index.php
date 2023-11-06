@@ -174,7 +174,7 @@
                         <label class="text-sm text-gray-700">See comments</label>
                         <input type="submit"
                             class="px-4 py-2 bg-blue-800 rounded text-xs text-white uppercase hover:bg-blue-700"
-                            name="sendComment" value="Comment" />
+                            name="sendComment" value="Show Comments" />
                     </div>
                 </form>
                 <div class="flex flex-col items-center gap-4 justify-center mt-8">
