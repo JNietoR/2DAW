@@ -157,6 +157,31 @@
                     }
                     ?>
                 </div>
+                <form action="index.php" method="POST">
+                    <div class="flex flex-col items-center gap-4 justify-center mt-8">
+                        <label class="text-sm text-gray-700">Leave a comment</label>
+                        <input type="submit"
+                            class="px-4 py-2 bg-blue-800 rounded text-xs text-white uppercase hover:bg-blue-700"
+                            name="sendComment" value="Comment" />
+                    </div>
+                </form>
+                <div class="flex flex-col items-center gap-4 justify-center mt-8">
+                    <?php
+                    //si se utiliza el formulario para dejar comentarios
+                    if (isset($_POST['sendComment'])) {
+                        //como solo tiene permisos de lectura lo abrimo con r solo dandole solo esos permisos
+                        $archivo = fopen("comentarios.txt", "r");
+                        //cerramos el fichero
+                        fclose($archivo);
+                        //con esto mostramos el contenido del documento
+                        $completo = file_get_contents("comentarios.txt");
+                        //linea de texto para dar mas información
+                        echo "La información del fichero comentarios es: <br>";
+                        //imprimir el contenido almazenado en la variable con todo el documento
+                        echo $completo;
+                    }
+                    ?>
+                </div>
                 <form method="post" action="logout.php">
                     <div class="flex items-center gap-4 justify-end mt-8">
                         <button type="submit" name="logout"
