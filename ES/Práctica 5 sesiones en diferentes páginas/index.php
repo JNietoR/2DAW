@@ -16,11 +16,11 @@
             session_start();
 
             if (isset($_SESSION['iniciada']) && $_SESSION['user_id'] == "Admin") {
-                // Usuario está autenticado
+                // Usuario Admin está autenticado
                 ?>
                 <div class="flex items-center gap-4 justify-center mt-8">
                     <?php
-                    // Imprime la fecha y hora almacenada en la variable de sesión
+                    // Imprime el nombre de usuario ademas de la fecha y hora almacenada en la variable de sesión
                     echo "User ".$_SESSION['user_id']." Loged at " . $_SESSION['login_time'];
                     ?>
                 </div>
@@ -34,8 +34,11 @@
                 </form>
                 <div class="flex flex-col items-center gap-4 justify-center mt-8">
                     <?php
+                    //si se ha utilizado el formulario para mostrar el directorio actual
                     if (isset($_GET['directorioactual'])) {
+                        //linea de texto para dar mas información
                         echo "El directorio actual es: <br>";
+                        //codigo para mostrar la ruta actual
                         echo getcwd();
                     }
                     ?>
@@ -52,8 +55,12 @@
                 </form>
                 <div class="flex flex-col items-center gap-4 justify-center mt-8">
                     <?php
+                    //si se ha utilizdo el formulario para buscar ficheros ejecuta el siguiente codigo
                     if (isset($_GET['search'])) {
+                        //linea de texto para dar mas información
                         echo "Los ficheros que cumplen esos criterios son: <br>";
+                        //foreach para mostrar todos los archivos que cumplan el regex de contener la palabra que le indicamos por el formulario
+                        // al ser *(cualquier cosa), $_GET['fichero'] (parametro pasado por formulario) y de nuevo *(cualquier cosa)
                         foreach (glob("*" . $_GET['fichero'] . "*") as $filename) {
                             echo $filename . "<br>";
                         }
@@ -73,17 +80,30 @@
                 </form>
                 <div class="flex flex-col items-center gap-4 justify-center mt-8">
                     <?php
+                    //si se utiliza el formulario para dejar comentarios
                     if (isset($_POST['sendComment'])) {
+                        //recogemos las variables enviadas por el formulario
                         $comentario = $_POST['comment'];
+                        //en lugar de pedir por formulario un nombre para crear un archivo voy a recoger los comentarios en un archivo como si fuera un log
+                        // si quisieramos crear un archivo tendriamos que crear otro input en el formulario y sustituir comentarios.txt en fopen
+                        // por la variable del formulario que recoga el nombre del archivo que queremos crear
+                        //con a+ hacemos que se agrege al final del archivo (append)
                         $archivo = fopen("comentarios.txt", "a+");
+                        //escribe en el archivo que hemos abierto el contenido enviado por formulario, 
+                        //con PHP_EOL(end of line) hacemos un salto de linea en el documento para que tenga un orden visual
                         fwrite($archivo, $comentario . PHP_EOL);
+                        //cierra el archivo para que no se pueda modificar
                         fclose($archivo);
+                        //con esto mostramos el contenido del documento
                         $completo = file_get_contents("comentarios.txt");
+                        //linea de texto para dar mas información
                         echo "La información del fichero comentarios es: <br>";
+                        //imprimir el contenido almazenado en la variable con todo el documento
                         echo $completo;
                     }
                     ?>
                 </div>
+                <!-- formulario para logout y destruir la sesión actual -->
                 <form method="post" action="logout.php">
                     <div class="flex items-center gap-4 justify-end mt-8">
                         <button type="submit" name="logout"
@@ -91,6 +111,7 @@
                     </div>
                 </form>
                 <?php
+                //mismo funcionalidades anteriores sin embargo con Cliente1 no tenemos la funcionalidad de escribir ni crear archivos, solo se ejecutara esto si el usuario es Cliente1
             } elseif(isset($_SESSION['iniciada']) && $_SESSION['user_id'] == "Cliente1"){
                 ?>
                 <div class="flex items-center gap-4 justify-center mt-8">
@@ -143,8 +164,8 @@
                 </form>
                 <?php
             } else{
-                // Usuario no está autenticado
-                header("Location:login.php");
+                // Si el usuario no esta registrado como ocurre con Admin o Cliente1 redirigira al login que esta en index.html
+                header("Location:index.html");
             }
             ?>
 
