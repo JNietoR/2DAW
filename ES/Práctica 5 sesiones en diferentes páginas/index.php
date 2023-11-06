@@ -13,6 +13,7 @@
         <h1 class="mb-6 text-3xl">- FILE MENU -</h1>
         <div class="w-full sm:max-w-md py-4 px-6 bg-white shadow sm:rounded">
             <?php
+            //iniciar sesión para acceder a las variables creadas al usar credenciales correctas en el login
             session_start();
 
             if (isset($_SESSION['iniciada']) && $_SESSION['user_id'] == "Admin") {
@@ -165,6 +166,7 @@
                 <?php
             } else{
                 // Si el usuario no esta registrado como ocurre con Admin o Cliente1 redirigira al login que esta en index.html
+                // de esta forma no podran entrar en el sistema a traves de la ruta /index.php
                 header("Location:index.html");
             }
             ?>
