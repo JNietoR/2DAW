@@ -15,13 +15,13 @@
             <?php
             session_start();
 
-            if (isset($_SESSION['iniciada']) && $_SESSION['iniciada'] == true) {
+            if (isset($_SESSION['iniciada']) && $_SESSION['user_id'] == "Admin") {
                 // Usuario está autenticado
                 ?>
                 <div class="flex items-center gap-4 justify-center mt-8">
                     <?php
                     // Imprime la fecha y hora almacenada en la variable de sesión
-                    echo "Loged at " . $_SESSION['login_time'];
+                    echo "User ".$_SESSION['user_id']." Loged at " . $_SESSION['login_time'];
                     ?>
                 </div>
                 <!-- formulario con el metodo get para imprimir el directorio actual -->
@@ -91,7 +91,58 @@
                     </div>
                 </form>
                 <?php
-            } else {
+            } elseif(isset($_SESSION['iniciada']) && $_SESSION['user_id'] == "Cliente1"){
+                ?>
+                <div class="flex items-center gap-4 justify-center mt-8">
+                    <?php
+                    // Imprime la fecha y hora almacenada en la variable de sesión
+                    echo "User ".$_SESSION['user_id']." Loged at " . $_SESSION['login_time'];
+                    ?>
+                </div>
+                <!-- formulario con el metodo get para imprimir el directorio actual -->
+                <form action="index.php" method="get">
+                    <div class="flex items-center gap-4 justify-center mt-8">
+                        <input type="submit"
+                            class="px-4 py-2 bg-blue-800 rounded text-xs text-white uppercase hover:bg-blue-700"
+                            name="directorioactual" value="Show current directory" />
+                    </div>
+                </form>
+                <div class="flex flex-col items-center gap-4 justify-center mt-8">
+                    <?php
+                    if (isset($_GET['directorioactual'])) {
+                        echo "El directorio actual es: <br>";
+                        echo getcwd();
+                    }
+                    ?>
+                </div>
+                <!-- formulario con el metodo get para buscar los ficheros con el nombre indicado -->
+                <form action="index.php" method="get">
+                    <div class="flex flex-col items-center gap-4 justify-center mt-8">
+                        <input class='rounded shadow border border-gray-300 p-2 mt-1 w-full outline-none' type="text"
+                            name="fichero" />
+                        <input type="submit"
+                            class="px-4 py-2 bg-blue-800 rounded text-xs text-white uppercase hover:bg-blue-700"
+                            name="search" value="Search file" />
+                    </div>
+                </form>
+                <div class="flex flex-col items-center gap-4 justify-center mt-8">
+                    <?php
+                    if (isset($_GET['search'])) {
+                        echo "Los ficheros que cumplen esos criterios son: <br>";
+                        foreach (glob("*" . $_GET['fichero'] . "*") as $filename) {
+                            echo $filename . "<br>";
+                        }
+                    }
+                    ?>
+                </div>
+                <form method="post" action="logout.php">
+                    <div class="flex items-center gap-4 justify-end mt-8">
+                        <button type="submit" name="logout"
+                            class="px-4 py-2 bg-blue-800 rounded text-xs text-white uppercase hover:bg-blue-700">Log Out</button>
+                    </div>
+                </form>
+                <?php
+            } else{
                 // Usuario no está autenticado
                 header("Location:login.php");
             }
