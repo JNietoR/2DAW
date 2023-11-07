@@ -80,46 +80,46 @@ function mostrarInformacionAlumno(alumno, divId) {
     divAlumno.innerHTML = `
     <table border="1">
     <tr>
-        <th colspan="2">Información del Alumno</th>
+        <th colspan="2" class="text-center">Información del Alumno</th>
     </tr>
     <tr>
         <th>Nombre:</th>
-        <td>${alumno.nombre}</td>
+        <td class="text-center">${alumno.nombre}</td>
     </tr>
     <tr>
         <th>Edad:</th>
-        <td>${alumno.edad}</td>
+        <td class="text-center">${alumno.edad}</td>
     </tr>
     <tr>
         <th>Ciclo:</th>
-        <td>${alumno.ciclo}</td>
+        <td class="text-center">${alumno.ciclo}</td>
     </tr>
     <tr>
         <th>Curso:</th>
-        <td>${alumno.curso}</td>
+        <td class="text-center">${alumno.curso}</td>
     </tr>
     <tr>
         <th>Tutor:</th>
-        <td>${alumno.tutor.nombre}</td>
+        <td class="text-center">${alumno.tutor.nombre}</td>
     </tr>
     <tr>
-        <th>Asignatura</th><th>Nota Media</th>
+        <th class="text-center">Asignatura</th><th>Nota Media</th>
     </tr>
     <tr>
         <td>${alumno.asignaturas.entornoCliente.nombre}</td>
-        <td>${alumno.notasMedias.notaEntornoCliente}</td>
+        <td class="text-center">${alumno.notasMedias.notaEntornoCliente}</td>
     </tr>
     <tr>
         <td>${alumno.asignaturas.entornoServidor.nombre}</td>
-        <td>${alumno.notasMedias.notaEntornoServidor}</td>
+        <td class="text-center">${alumno.notasMedias.notaEntornoServidor}</td>
     </tr>
     <tr>
         <td>${alumno.asignaturas.diseñoWeb.nombre}</td>
-        <td>${alumno.notasMedias.notaDiseñoWeb}</td>
+        <td class="text-center">${alumno.notasMedias.notaDiseñoWeb}</td>
     </tr>
     <tr>
         <td>${alumno.asignaturas.despliegueWeb.nombre}</td>
-        <td>${alumno.notasMedias.notaDespliegueWeb}</td>
+        <td class="text-center">${alumno.notasMedias.notaDespliegueWeb}</td>
     </tr>
 </table>
 `;
