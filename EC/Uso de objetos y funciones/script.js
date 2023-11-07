@@ -50,18 +50,26 @@ tutor, una lista de asignaturas y una lista de nota media de cada asignatura.
 */
 
 let notasMedias = {
-    entornoCliente.setAttribute(notamedia, 5),
-    entornoServidor,
-    diseñoWeb,
-    despliegeWeb
+    notaEntornoCliente: 10,
+    notaEntornoServidor: 10,
+    notaDiseñoWeb: 10,
+    notaDespliegeWeb: 10
 }
 
-let alumno = {
+let alumnoJ = {
     nombre: 'Jorge',
     edad:32,
     ciclo:'DAW',
     tutor:tutor,
     asignaturas:asignaturas,
+    notasMedias:notasMedias
 }
-
+let alumnoM = {
+    nombre: 'Manuel',
+    edad:21,
+    ciclo:'DAW',
+    tutor:tutor,
+    asignaturas:asignaturas,
+    notasMedias:notasMedias
+}
 
