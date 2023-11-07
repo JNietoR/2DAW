@@ -50,7 +50,7 @@ tutor, una lista de asignaturas y una lista de nota media de cada asignatura.
 */
 
 let notasMedias = {
-    entornoCliente,
+    entornoCliente.setAttribute(notamedia, 5),
     entornoServidor,
     diseñoWeb,
     despliegeWeb
