@@ -49,12 +49,19 @@ Un alumno tendrá un nombre, una edad, el ciclo que estudia, el curso en el que 
 tutor, una lista de asignaturas y una lista de nota media de cada asignatura. 
 */
 
+let notasMedias = {
+    entornoCliente,
+    entornoServidor,
+    diseñoWeb,
+    despliegeWeb
+}
+
 let alumno = {
     nombre: 'Jorge',
     edad:32,
     ciclo:'DAW',
     tutor:tutor,
     asignaturas:asignaturas,
-    
 }
+
 
