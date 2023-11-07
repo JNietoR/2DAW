@@ -29,8 +29,8 @@ let diseñoWeb = {
     curso: 2,
     horas: 4
 }
-let despliegeWeb = {
-    nombre: 'Despliege de aplicaciones web en entorno Servidor',
+let despliegueWeb = {
+    nombre: 'Despliegue de aplicaciones web en entorno Servidor',
     curso: 2,
     horas: 4
 }
@@ -39,7 +39,7 @@ let asignaturas = {
     entornoCliente,
     entornoServidor,
     diseñoWeb,
-    despliegeWeb
+    despliegueWeb
 }
 
 /* 
@@ -53,13 +53,14 @@ let notasMedias = {
     notaEntornoCliente: 10,
     notaEntornoServidor: 10,
     notaDiseñoWeb: 10,
-    notaDespliegeWeb: 10
+    notaDespliegueWeb: 10
 }
 
 let alumnoJ = {
     nombre: 'Jorge',
     edad:32,
     ciclo:'DAW',
+    curso:2,
     tutor:tutor,
     asignaturas:asignaturas,
     notasMedias:notasMedias
@@ -68,6 +69,7 @@ let alumnoM = {
     nombre: 'Manuel',
     edad:21,
     ciclo:'DAW',
+    curso:2,
     tutor:tutor,
     asignaturas:asignaturas,
     notasMedias:notasMedias
