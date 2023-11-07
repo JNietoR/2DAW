@@ -28,19 +28,19 @@ let diseñoWeb = {
     nombre: 'Diseño de interfaces Web',
     curso: 2,
     horas: 4
-}
+};
 let despliegueWeb = {
-    nombre: 'Despliegue de aplicaciones web en entorno Servidor',
+    nombre: 'Despliegue de aplicaciones Web',
     curso: 2,
     horas: 4
-}
+};
 
 let asignaturas = {
     entornoCliente,
     entornoServidor,
     diseñoWeb,
     despliegueWeb
-}
+};
 
 /* 
 Haciendo uso del objeto TUTOR creado en el ejercicio 1 y de la lista de objetos ASIGNATURA creada en el
@@ -54,7 +54,7 @@ let notasMedias = {
     notaEntornoServidor: 10,
     notaDiseñoWeb: 10,
     notaDespliegueWeb: 10
-}
+};
 
 let alumnoJ = {
     nombre: 'Jorge',
@@ -64,7 +64,7 @@ let alumnoJ = {
     tutor:tutor,
     asignaturas:asignaturas,
     notasMedias:notasMedias
-}
+};
 let alumnoM = {
     nombre: 'Manuel',
     edad:21,
@@ -73,5 +73,54 @@ let alumnoM = {
     tutor:tutor,
     asignaturas:asignaturas,
     notasMedias:notasMedias
-}
+};
 
+function mostrarInformacionAlumno(alumno, divId) {
+    let divAlumno = document.getElementById(divId);
+    divAlumno.innerHTML = `
+    <table border="1">
+    <tr>
+        <th colspan="2">Información del Alumno</th>
+    </tr>
+    <tr>
+        <th>Nombre:</th>
+        <td>${alumno.nombre}</td>
+    </tr>
+    <tr>
+        <th>Edad:</th>
+        <td>${alumno.edad}</td>
+    </tr>
+    <tr>
+        <th>Ciclo:</th>
+        <td>${alumno.ciclo}</td>
+    </tr>
+    <tr>
+        <th>Curso:</th>
+        <td>${alumno.curso}</td>
+    </tr>
+    <tr>
+        <th>Tutor:</th>
+        <td>${alumno.tutor.nombre}</td>
+    </tr>
+    <tr>
+        <th>Asignatura</th><th>Nota Media</th>
+    </tr>
+    <tr>
+        <td>${alumno.asignaturas.entornoCliente.nombre}</td>
+        <td>${alumno.notasMedias.notaEntornoCliente}</td>
+    </tr>
+    <tr>
+        <td>${alumno.asignaturas.entornoServidor.nombre}</td>
+        <td>${alumno.notasMedias.notaEntornoServidor}</td>
+    </tr>
+    <tr>
+        <td>${alumno.asignaturas.diseñoWeb.nombre}</td>
+        <td>${alumno.notasMedias.notaDiseñoWeb}</td>
+    </tr>
+    <tr>
+        <td>${alumno.asignaturas.despliegueWeb.nombre}</td>
+        <td>${alumno.notasMedias.notaDespliegueWeb}</td>
+    </tr>
+</table>
+`;
+}
