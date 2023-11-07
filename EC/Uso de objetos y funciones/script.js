@@ -67,7 +67,7 @@ let alumnoJ = {
 };
 let alumnoM = {
     nombre: 'Manuel',
-    edad:21,
+    edad:20,
     ciclo:'DAW',
     curso:2,
     tutor:tutor,
