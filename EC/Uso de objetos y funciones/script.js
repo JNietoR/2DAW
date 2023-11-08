@@ -80,8 +80,8 @@ tutor, una lista de asignaturas y una lista de nota media de cada asignatura.
 
 let notasMedias = {
     entornoCliente: 10,
-    entornoServidor: 10,
-    diseñoWeb: 10,
+    entornoServidor: 9,
+    diseñoWeb: 9,
     despliegueWeb: 10
 };
 
@@ -101,8 +101,29 @@ let alumnoM = {
         }
         return sum / notas.length;
     },
-    mediaAsignatura: function (asignaturaNombre) {
-        return this.notasMedias[`nota${asignaturaNombre}`];
+    
+    mediaAsignatura: function () {
+        let tablaNotas = document.createElement('table');
+        tablaNotas.innerHTML = `
+            <tr>
+                <th>Asignatura</th>
+                <th>Nota Media</th>
+            </tr>
+        `;
+        for (const asignatura in this.notasMedias) {
+            if (this.notasMedias.hasOwnProperty(asignatura)) {
+                const nota = this.notasMedias[asignatura];
+                const fila = document.createElement('tr');
+                fila.innerHTML = `
+                    <td>${this.asignaturas[asignatura].nombre}</td>
+                    <td class="text-center">${nota}</td>
+                `;
+                tablaNotas.appendChild(fila);
+            }
+        }
+        
+        const contenedorTabla = document.getElementById('tablaNotas');
+        contenedorTabla.appendChild(tablaNotas);
     },
     mostrar: function () {
         console.log(`Nombre: ${this.nombre}`);
@@ -130,6 +151,7 @@ let alumnoM = {
         console.log(`Media: ${this.calcularMedia()}`);
     },
 };
+
 let alumnoJ = {
     nombre: 'Jorge',
     edad: 32,
@@ -160,7 +182,7 @@ let alumnoJ = {
                 const fila = document.createElement('tr');
                 fila.innerHTML = `
                     <td>${this.asignaturas[asignatura].nombre}</td>
-                    <td>${nota}</td>
+                    <td class="text-center">${nota}</td>
                 `;
                 tablaNotas.appendChild(fila);
             }
@@ -171,30 +193,57 @@ let alumnoJ = {
     },
     
     mostrar: function () {
-        console.log(`Nombre: ${this.nombre}`);
-        console.log(`Edad: ${this.edad}`);
-        console.log(`Ciclo: ${this.ciclo}`);
-        console.log(`Curso: ${this.curso}`);
-        console.log(`Tutor: ${this.tutor.nombre}`);
-
-        console.log('Asignaturas:');
-        for (let asignaturaKey in this.asignaturas) {
-            if (this.asignaturas.hasOwnProperty(asignaturaKey)) {
-                let asignatura = this.asignaturas[asignaturaKey];
-                console.log(`  - ${asignatura.nombre} (Curso ${asignatura.curso}, Horas: ${asignatura.horas})`);
+        let tablaInfoAlumno = document.getElementById('tablaInfoAlumno');
+        let tablaContent = `
+            <tr>
+                <th colspan="2" class="text-center">Información del Alumno</th>
+            </tr>
+            <tr>
+                <th>Nombre:</th>
+                <td class="text-center">${this.nombre}</td>
+            </tr>
+            <tr>
+                <th>Edad:</th>
+                <td class="text-center">${this.edad}</td>
+            </tr>
+            <tr>
+                <th>Ciclo:</th>
+                <td class="text-center">${this.ciclo}</td>
+            </tr>
+            <tr>
+                <th>Curso:</th>
+                <td class="text-center">${this.curso}</td>
+            </tr>
+            <tr>
+                <th>Tutor:</th>
+                <td class="text-center">${this.tutor.nombre}</td>
+            </tr>
+            <tr>
+                <th class="text-center">Asignaturas</th>
+                <th>Nota Media</th>
+            </tr>
+        `;
+    
+        for (const asignatura in this.notasMedias) {
+            if (this.notasMedias.hasOwnProperty(asignatura)) {
+                tablaContent += `
+                    <tr>
+                        <td>${this.asignaturas[asignatura].nombre}</td>
+                        <td class="text-center">${this.notasMedias[asignatura]}</td>
+                    </tr>
+                `;
             }
         }
-
-        console.log('Notas Medias:');
-        for (let notaKey in this.notasMedias) {
-            if (this.notasMedias.hasOwnProperty(notaKey)) {
-                let nota = this.notasMedias[notaKey];
-                console.log(`  - ${notaKey}: ${nota}`);
-            }
-        }
-
-        console.log(`Media: ${this.calcularMedia()}`);
-    },
+    
+        tablaContent += `
+            <tr>
+                <th>Media:</th>
+                <td class="text-center">${this.calcularMedia()}</td>
+            </tr>
+        `;
+    
+        tablaInfoAlumno.innerHTML = tablaContent;
+    }
     
 };
 
@@ -293,19 +342,19 @@ function mostrarInformacionAlumno(alumno, divId) {
    </tr>
    <tr>
        <td>${alumno.asignaturas.entornoCliente.nombre}</td>
-       <td class="text-center">${alumno.notasMedias.notaEntornoCliente}</td>
+       <td class="text-center">${alumno.notasMedias.entornoCliente}</td>
    </tr>
    <tr>
        <td>${alumno.asignaturas.entornoServidor.nombre}</td>
-       <td class="text-center">${alumno.notasMedias.notaEntornoServidor}</td>
+       <td class="text-center">${alumno.notasMedias.entornoServidor}</td>
    </tr>
    <tr>
        <td>${alumno.asignaturas.diseñoWeb.nombre}</td>
-       <td class="text-center">${alumno.notasMedias.notaDiseñoWeb}</td>
+       <td class="text-center">${alumno.notasMedias.diseñoWeb}</td>
    </tr>
    <tr>
        <td>${alumno.asignaturas.despliegueWeb.nombre}</td>
-       <td class="text-center">${alumno.notasMedias.notaDespliegueWeb}</td>
+       <td class="text-center">${alumno.notasMedias.despliegueWeb}</td>
    </tr>
 </table>
 `;

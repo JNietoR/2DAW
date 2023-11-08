@@ -12,18 +12,28 @@
 
 <body class="bg-gray-900">
     <div class=" text-white flex flex-col text-justify m-auto w-3/4 my-8">
-        <h2 class="m-auto text-xl">Alumnos</h2>
+        <h2 class="m-auto text-xl">Ficha alumnos</h2>
         <div id="alumnos">
             <table class="m-auto" id="alumno">
             </table>
         </div>
-        <table class="m-auto" id="tablaNotas">
+        <h2 class="m-auto text-xl"> Alumno </h2>
+        <div id="infoAlumno">
+            <table class="m-auto" id="tablaInfoAlumno"></table>
+        </div>
+
+        <h2 class="m-auto text-xl">Nota media asignaturas</h2>
+        <div id="notaAlumno">
+            <table class="m-auto" id="tablaNotas">
         </table>
+        </div>
+        
     </div>
 </body>
 <script> 
   mostrarAlumno();
-  alumnoJ.mostrarNotasEnTabla();
+  alumnoJ.mediaAsignatura();
+  alumnoJ.mostrar();
 </script>
 
 </html>
