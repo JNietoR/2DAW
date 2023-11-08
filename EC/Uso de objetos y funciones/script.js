@@ -68,7 +68,7 @@ let asignaturas = {
     cambiarHoras: function (asignaturaNombre, nuevasHoras) {
         this[asignaturaNombre].horas = nuevasHoras;
     },
-    */ 
+    */
 };
 
 /* 
@@ -79,10 +79,10 @@ tutor, una lista de asignaturas y una lista de nota media de cada asignatura.
 */
 
 let notasMedias = {
-    notaEntornoCliente: 10,
-    notaEntornoServidor: 10,
-    notaDiseñoWeb: 10,
-    notaDespliegueWeb: 10
+    entornoCliente: 10,
+    entornoServidor: 10,
+    diseñoWeb: 10,
+    despliegueWeb: 10
 };
 
 let alumnoM = {
@@ -93,14 +93,41 @@ let alumnoM = {
     tutor: tutor,
     asignaturas: asignaturas,
     notasMedias: notasMedias,
-    calcularMedia:function(){
-        // notas en array y media
+    calcularMedia: function () {
+        let notas = Object.values(this.notasMedias);
+        let sum = 0;
+        for (let nota of notas) {
+            sum += nota;
+        }
+        return sum / notas.length;
     },
-    mediaAsignatura:function(){
-
+    mediaAsignatura: function (asignaturaNombre) {
+        return this.notasMedias[`nota${asignaturaNombre}`];
     },
-    mostrar:function(){
+    mostrar: function () {
+        console.log(`Nombre: ${this.nombre}`);
+        console.log(`Edad: ${this.edad}`);
+        console.log(`Ciclo: ${this.ciclo}`);
+        console.log(`Curso: ${this.curso}`);
+        console.log(`Tutor: ${this.tutor.nombre}`);
 
+        console.log('Asignaturas:');
+        for (let asignaturaKey in this.asignaturas) {
+            if (this.asignaturas.hasOwnProperty(asignaturaKey)) {
+                let asignatura = this.asignaturas[asignaturaKey];
+                console.log(`  - ${asignatura.nombre} (Curso ${asignatura.curso}, Horas: ${asignatura.horas})`);
+            }
+        }
+
+        console.log('Notas Medias:');
+        for (let notaKey in this.notasMedias) {
+            if (this.notasMedias.hasOwnProperty(notaKey)) {
+                let nota = this.notasMedias[notaKey];
+                console.log(`  - ${notaKey}: ${nota}`);
+            }
+        }
+
+        console.log(`Media: ${this.calcularMedia()}`);
     },
 };
 let alumnoJ = {
@@ -111,16 +138,66 @@ let alumnoJ = {
     tutor: tutor,
     asignaturas: asignaturas,
     notasMedias: notasMedias,
-    calcularMedia:function(){
-        // notas en array y media
+    calcularMedia: function () {
+        let notas = Object.values(this.notasMedias);
+        let sum = 0;
+        for (let nota of notas) {
+            sum += nota;
+        }
+        return sum / notas.length;
     },
-    mediaAsignatura:function(){
+    mediaAsignatura: function () {
+        let tablaNotas = document.createElement('table');
+        tablaNotas.innerHTML = `
+            <tr>
+                <th>Asignatura</th>
+                <th>Nota Media</th>
+            </tr>
+        `;
+        for (const asignatura in this.notasMedias) {
+            if (this.notasMedias.hasOwnProperty(asignatura)) {
+                const nota = this.notasMedias[asignatura];
+                const fila = document.createElement('tr');
+                fila.innerHTML = `
+                    <td>${this.asignaturas[asignatura].nombre}</td>
+                    <td>${nota}</td>
+                `;
+                tablaNotas.appendChild(fila);
+            }
+        }
+        
+        const contenedorTabla = document.getElementById('tablaNotas');
+        contenedorTabla.appendChild(tablaNotas);
+    },
+    
+    mostrar: function () {
+        console.log(`Nombre: ${this.nombre}`);
+        console.log(`Edad: ${this.edad}`);
+        console.log(`Ciclo: ${this.ciclo}`);
+        console.log(`Curso: ${this.curso}`);
+        console.log(`Tutor: ${this.tutor.nombre}`);
 
-    },
-    mostrar:function(){
+        console.log('Asignaturas:');
+        for (let asignaturaKey in this.asignaturas) {
+            if (this.asignaturas.hasOwnProperty(asignaturaKey)) {
+                let asignatura = this.asignaturas[asignaturaKey];
+                console.log(`  - ${asignatura.nombre} (Curso ${asignatura.curso}, Horas: ${asignatura.horas})`);
+            }
+        }
 
+        console.log('Notas Medias:');
+        for (let notaKey in this.notasMedias) {
+            if (this.notasMedias.hasOwnProperty(notaKey)) {
+                let nota = this.notasMedias[notaKey];
+                console.log(`  - ${notaKey}: ${nota}`);
+            }
+        }
+
+        console.log(`Media: ${this.calcularMedia()}`);
     },
+    
 };
+
 
 let alumnos = [
     alumnoM,
@@ -129,7 +206,7 @@ let alumnos = [
 
 
 
-function mostrarAlumno(){
+function mostrarAlumno() {
     let tablaalumno = document.getElementById('alumno');
     let tablaContent = ``
     for (const alumno of alumnos) {
@@ -158,28 +235,28 @@ function mostrarAlumno(){
        <td class="text-center">${alumno.tutor.nombre}</td>
    </tr>
    <tr>
-       <th class="text-center">Asignatura</th><th>Nota Media</th>
+       <th class="text-center">Asignaturas</th><th>Nota Media</th>
    </tr>
    <tr>
        <td>${alumno.asignaturas.entornoCliente.nombre}</td>
-       <td class="text-center">${alumno.notasMedias.notaEntornoCliente}</td>
+       <td class="text-center">${alumno.notasMedias.entornoCliente}</td>
    </tr>
    <tr>
        <td>${alumno.asignaturas.entornoServidor.nombre}</td>
-       <td class="text-center">${alumno.notasMedias.notaEntornoServidor}</td>
+       <td class="text-center">${alumno.notasMedias.entornoServidor}</td>
    </tr>
    <tr>
        <td>${alumno.asignaturas.diseñoWeb.nombre}</td>
-       <td class="text-center">${alumno.notasMedias.notaDiseñoWeb}</td>
+       <td class="text-center">${alumno.notasMedias.diseñoWeb}</td>
    </tr>
    <tr>
        <td>${alumno.asignaturas.despliegueWeb.nombre}</td>
-       <td class="text-center">${alumno.notasMedias.notaDespliegueWeb}</td>
+       <td class="text-center">${alumno.notasMedias.despliegueWeb}</td>
    </tr>
         `
     }
-    
-    tablaalumno.innerHTML +=tablaContent;
+
+    tablaalumno.innerHTML += tablaContent;
 };
 /*
 
