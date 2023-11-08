@@ -6,7 +6,13 @@ let tutor = {
     nombre: 'Evelyn',
     edad: 25,
     dni: '24242424A',
-    titulo: 'Ingenieria Informatica'
+    titulo: 'Ingenieria Informatica',
+    mostrar: function () {
+        return `Nombre: ${this.nombre}, Edad: ${this.edad}, DNI: ${this.dni}, Título: ${this.titulo}`;
+    },
+    cambiarNombre: function (nuevoNombre) {
+        this.nombre = nuevoNombre;
+    }
 };
 
 /*
@@ -39,7 +45,30 @@ let asignaturas = {
     entornoCliente,
     entornoServidor,
     diseñoWeb,
-    despliegueWeb
+    despliegueWeb,
+    mostrar: function () {
+        let asignaturasInfo = [];
+        for (let key in this) {
+            if (this.hasOwnProperty(key) && typeof this[key] === 'object') {
+                const asignatura = this[key];
+                asignaturasInfo.push(`Nombre: ${asignatura.nombre}, Curso: ${asignatura.curso}, Horas: ${asignatura.horas}`);
+            }
+        }
+        return asignaturasInfo.join('\n');
+    },
+    cambiarHoras: function (asignaturaNombre, nuevasHoras) {
+        this[asignaturaNombre].horas = nuevasHoras;
+    },
+
+    /*
+    mostrar: function (asignaturaNombre) {
+        const asignatura = this[asignaturaNombre];
+        return `Nombre: ${asignatura.nombre}, Curso: ${asignatura.curso}, Horas: ${asignatura.horas}`;
+    },
+    cambiarHoras: function (asignaturaNombre, nuevasHoras) {
+        this[asignaturaNombre].horas = nuevasHoras;
+    },
+    */ 
 };
 
 /* 
@@ -56,71 +85,114 @@ let notasMedias = {
     notaDespliegueWeb: 10
 };
 
-let alumnoJ = {
-    nombre: 'Jorge',
-    edad:32,
-    ciclo:'DAW',
-    curso:2,
-    tutor:tutor,
-    asignaturas:asignaturas,
-    notasMedias:notasMedias
-};
-let alumnoM = {
+let alumno = {
     nombre: 'Manuel',
-    edad:20,
-    ciclo:'DAW',
-    curso:2,
-    tutor:tutor,
-    asignaturas:asignaturas,
-    notasMedias:notasMedias
+    edad: 20,
+    ciclo: 'DAW',
+    curso: 2,
+    tutor: tutor,
+    asignaturas: asignaturas,
+    notasMedias: notasMedias,
+    calcularMedia:function(){
+        // notas en array y media
+    },
+    mediaAsignatura:function(){
+
+    },
+    mostrar:function(){
+
+    },
 };
 
+
+
+
+
+
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 function mostrarInformacionAlumno(alumno, divId) {
-    let divAlumno = document.getElementById(divId);
-    divAlumno.innerHTML = `
-    <table border="1">
-    <tr>
-        <th colspan="2" class="text-center">Información del Alumno</th>
-    </tr>
-    <tr>
-        <th>Nombre:</th>
-        <td class="text-center">${alumno.nombre}</td>
-    </tr>
-    <tr>
-        <th>Edad:</th>
-        <td class="text-center">${alumno.edad}</td>
-    </tr>
-    <tr>
-        <th>Ciclo:</th>
-        <td class="text-center">${alumno.ciclo}</td>
-    </tr>
-    <tr>
-        <th>Curso:</th>
-        <td class="text-center">${alumno.curso}</td>
-    </tr>
-    <tr>
-        <th>Tutor:</th>
-        <td class="text-center">${alumno.tutor.nombre}</td>
-    </tr>
-    <tr>
-        <th class="text-center">Asignatura</th><th>Nota Media</th>
-    </tr>
-    <tr>
-        <td>${alumno.asignaturas.entornoCliente.nombre}</td>
-        <td class="text-center">${alumno.notasMedias.notaEntornoCliente}</td>
-    </tr>
-    <tr>
-        <td>${alumno.asignaturas.entornoServidor.nombre}</td>
-        <td class="text-center">${alumno.notasMedias.notaEntornoServidor}</td>
-    </tr>
-    <tr>
-        <td>${alumno.asignaturas.diseñoWeb.nombre}</td>
-        <td class="text-center">${alumno.notasMedias.notaDiseñoWeb}</td>
-    </tr>
-    <tr>
-        <td>${alumno.asignaturas.despliegueWeb.nombre}</td>
-        <td class="text-center">${alumno.notasMedias.notaDespliegueWeb}</td>
-    </tr>
+
+
+
+
+  
+   let divAlumno = document.getElementById(divId);
+   divAlumno.innerHTML = `
+   <table border="1">
+   <tr>
+       <th colspan="2" class="text-center">Información del Alumno</th>
+   </tr>
+   <tr>
+       <th>Nombre:</th>
+       <td class="text-center">${alumno.nombre}</td>
+   </tr>
+   <tr>
+       <th>Edad:</th>
+       <td class="text-center">${alumno.edad}</td>
+   </tr>
+   <tr>
+       <th>Ciclo:</th>
+       <td class="text-center">${alumno.ciclo}</td>
+   </tr>
+   <tr>
+       <th>Curso:</th>
+       <td class="text-center">${alumno.curso}</td>
+   </tr>
+   <tr>
+       <th>Tutor:</th>
+       <td class="text-center">${alumno.tutor.nombre}</td>
+   </tr>
+   <tr>
+       <th class="text-center">Asignatura</th><th>Nota Media</th>
+   </tr>
+   <tr>
+       <td>${alumno.asignaturas.entornoCliente.nombre}</td>
+       <td class="text-center">${alumno.notasMedias.notaEntornoCliente}</td>
+   </tr>
+   <tr>
+       <td>${alumno.asignaturas.entornoServidor.nombre}</td>
+       <td class="text-center">${alumno.notasMedias.notaEntornoServidor}</td>
+   </tr>
+   <tr>
+       <td>${alumno.asignaturas.diseñoWeb.nombre}</td>
+       <td class="text-center">${alumno.notasMedias.notaDiseñoWeb}</td>
+   </tr>
+   <tr>
+       <td>${alumno.asignaturas.despliegueWeb.nombre}</td>
+       <td class="text-center">${alumno.notasMedias.notaDespliegueWeb}</td>
+   </tr>
 </table>
 `;
 }
+*/
+
