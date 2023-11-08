@@ -85,7 +85,7 @@ let notasMedias = {
     notaDespliegueWeb: 10
 };
 
-let alumno = {
+let alumnoM = {
     nombre: 'Manuel',
     edad: 20,
     ciclo: 'DAW',
@@ -103,49 +103,88 @@ let alumno = {
 
     },
 };
+let alumnoJ = {
+    nombre: 'Jorge',
+    edad: 32,
+    ciclo: 'DAW',
+    curso: 2,
+    tutor: tutor,
+    asignaturas: asignaturas,
+    notasMedias: notasMedias,
+    calcularMedia:function(){
+        // notas en array y media
+    },
+    mediaAsignatura:function(){
+
+    },
+    mostrar:function(){
+
+    },
+};
+
+let alumnos = [
+    alumnoM,
+    alumnoJ
+];
 
 
 
-
-
-
-
-                    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+function mostrarAlumno(){
+    let tablaalumno = document.getElementById('alumno');
+    let tablaContent = ``
+    for (const alumno of alumnos) {
+        tablaContent += `
+        <tr>
+       <th colspan="2" class="text-center">Información del Alumno</th>
+   </tr>
+   <tr>
+       <th>Nombre:</th>
+       <td class="text-center">${alumno.nombre}</td>
+   </tr>
+   <tr>
+       <th>Edad:</th>
+       <td class="text-center">${alumno.edad}</td>
+   </tr>
+   <tr>
+       <th>Ciclo:</th>
+       <td class="text-center">${alumno.ciclo}</td>
+   </tr>
+   <tr>
+       <th>Curso:</th>
+       <td class="text-center">${alumno.curso}</td>
+   </tr>
+   <tr>
+       <th>Tutor:</th>
+       <td class="text-center">${alumno.tutor.nombre}</td>
+   </tr>
+   <tr>
+       <th class="text-center">Asignatura</th><th>Nota Media</th>
+   </tr>
+   <tr>
+       <td>${alumno.asignaturas.entornoCliente.nombre}</td>
+       <td class="text-center">${alumno.notasMedias.notaEntornoCliente}</td>
+   </tr>
+   <tr>
+       <td>${alumno.asignaturas.entornoServidor.nombre}</td>
+       <td class="text-center">${alumno.notasMedias.notaEntornoServidor}</td>
+   </tr>
+   <tr>
+       <td>${alumno.asignaturas.diseñoWeb.nombre}</td>
+       <td class="text-center">${alumno.notasMedias.notaDiseñoWeb}</td>
+   </tr>
+   <tr>
+       <td>${alumno.asignaturas.despliegueWeb.nombre}</td>
+       <td class="text-center">${alumno.notasMedias.notaDespliegueWeb}</td>
+   </tr>
+        `
+    }
+    
+    tablaalumno.innerHTML +=tablaContent;
+};
 /*
+
 function mostrarInformacionAlumno(alumno, divId) {
 
-
-
-
-  
    let divAlumno = document.getElementById(divId);
    divAlumno.innerHTML = `
    <table border="1">
@@ -194,5 +233,5 @@ function mostrarInformacionAlumno(alumno, divId) {
 </table>
 `;
 }
-*/
 
+*/
