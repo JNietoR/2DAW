@@ -64,8 +64,8 @@ let asignaturas = [
 let ALUMNO = {
     nombre: "Jose Manuel García Muñoz",
     edad: 20,
-    ciclo: "DAW",   
-    curso: 2,
+    ciclo: "DAM",   
+    curso: 1,
     tutor: TUTOR,
     asignaturas: asignaturas,
     notasMedias: [6, 8, 9.5, 8.5], 
