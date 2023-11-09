@@ -10,6 +10,9 @@
 
 <body>
     <!-- 
+
+        CUANDO USAR POST Y GET
+
     En esta práctica voy a utilizar ambos metodos get y post en los diferentes formularios.
     En general, GET admite como máximo el envío de unos 500 bytes de información. 
     Otra gran limitación del método GET es que no permite el envío de archivos adjuntos con el formulario.
@@ -20,7 +23,21 @@
     Dicho esto voy a utilizar post en el formulario de login para que no se muestren las credenciales introducizas en la ruta del navegador, 
     asi como en el formulario de insercción de datos en el fichero comentarios.txt siendo esto por privacidad además como anteriormente he comentado, se suele usar POST 
     como regla general si se modifica la información en el servidor.
+
+        DIFERENCIA ENTRE SESIONES Y COOKIES
+
+    Las cookies tienen varias limitaciones, por un lado la cantidad de información que puedes almacenar en cookies está limitada por el navegador, 
+    por otro lado, al estar en el ordenador del usuario este puede modificar las cookies como él quiera, pudiendo alterar así el funcionamiento de tu aplicación. 
+    Además, si algo sale mal con las cookies, no está en tu control arreglarlo, ya que no se almacenan en el servidor como las sesiones.
+
+    Por otro lado, las sesiones guardan la información en el servidor y no en el cliente, y lo que se envía entre cada petición es un identificador de sesión para cada usuario, 
+    a través del cuál puedes obtener los datos que guardaste en el servidor. 
+
+    La ventaja de las sesiones es que se almacenan en tu servidor, por lo que puedes guardar mucha más información que en las cookies, además, 
+    puedes usar diferentes metodos para almacenar las sesiones, desde guardarlas en archivos, usar la memoria RAM, 
+    hasta guardarlas en una base de datos especial para este tipo de información.
     -->
+    
     <div class="h-screen flex flex-col justify-center items-center bg-blue-100">
         <h1 class="mb-6 text-3xl">- FILE MENU -</h1>
         <div class="w-full sm:max-w-md py-4 px-6 bg-white shadow sm:rounded">
@@ -34,7 +51,7 @@
                 <div class="flex items-center gap-4 justify-center mt-8">
                     <?php
                     // Imprime el nombre de usuario ademas de la fecha y hora almacenada en la variable de sesión
-                    echo "User ".$_SESSION['user_id']." Loged at " . $_SESSION['login_time'];
+                    echo "User " . $_SESSION['user_id'] . " Loged at " . $_SESSION['login_time'];
                     ?>
                 </div>
                 <!-- formulario con el metodo get para imprimir el directorio actual -->
@@ -120,17 +137,18 @@
                 <form method="post" action="logout.php">
                     <div class="flex items-center gap-4 justify-end mt-8">
                         <button type="submit" name="logout"
-                            class="px-4 py-2 bg-blue-800 rounded text-xs text-white uppercase hover:bg-blue-700">Log Out</button>
+                            class="px-4 py-2 bg-blue-800 rounded text-xs text-white uppercase hover:bg-blue-700">Log
+                            Out</button>
                     </div>
                 </form>
                 <?php
                 //mismo funcionalidades anteriores sin embargo con Cliente1 no tenemos la funcionalidad de escribir ni crear archivos, solo se ejecutara esto si el usuario es Cliente1
-            } elseif(isset($_SESSION['iniciada']) && $_SESSION['user_id'] == "Cliente1"){
+            } elseif (isset($_SESSION['iniciada']) && $_SESSION['user_id'] == "Cliente1") {
                 ?>
                 <div class="flex items-center gap-4 justify-center mt-8">
                     <?php
                     // Imprime la fecha y hora almacenada en la variable de sesión
-                    echo "User ".$_SESSION['user_id']." Loged at " . $_SESSION['login_time'];
+                    echo "User " . $_SESSION['user_id'] . " Loged at " . $_SESSION['login_time'];
                     ?>
                 </div>
                 <!-- formulario con el metodo get para imprimir el directorio actual -->
@@ -198,11 +216,12 @@
                 <form method="post" action="logout.php">
                     <div class="flex items-center gap-4 justify-end mt-8">
                         <button type="submit" name="logout"
-                            class="px-4 py-2 bg-blue-800 rounded text-xs text-white uppercase hover:bg-blue-700">Log Out</button>
+                            class="px-4 py-2 bg-blue-800 rounded text-xs text-white uppercase hover:bg-blue-700">Log
+                            Out</button>
                     </div>
                 </form>
                 <?php
-            } else{
+            } else {
                 // Si el usuario no esta registrado como ocurre con Admin o Cliente1 redirigira al login que esta en index.html
                 // de esta forma no podran entrar en el sistema a traves de la ruta /index.php
                 header("Location:index.html");
