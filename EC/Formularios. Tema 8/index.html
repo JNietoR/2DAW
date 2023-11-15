@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Not Notion</title>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</head>
+
+<body class="fondo">
+    <!--    
+1.- Crea un formulario que solicite el nombre y la edad del usuario. Implementa una validación que asegure que el nombre solo contenga letras 
+y espacios, y que la edad sea un número positivo.
+-->
+    <div class="container text-white p-5 w-50 align-items-start">
+
+        <form method="post" id="formEjercicio1" onsubmit="procesarEjercicio1(event)">
+            <!-- Name input -->
+            <div class="form-outline mb-4">
+                <label class="form-label" for="name">Name</label>
+                <input type="text" name="name" id="name" oninput="comprobarNombre()" class="form-control" />
+
+            </div>
+
+            <!-- Email input -->
+            <div class="form-outline mb-4">
+                <label class="form-label" for="age">Edad</label>
+                <input type="number" type="number" name="age" id="age" oninput="comprobarEdad()" class="form-control" />
+
+            </div>
+            <div class="col-12">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </form>
+        <div class="listaUsuarios">
+            <!-- pintar lista con JS -->
+        </div>
+        <!-- 
+2.- Crea un formulario que permita al usuario agregar tareas a una lista. Implementa JavaScript para mostrar las tareas agregadas 
+y permitir su eliminación..
+-->
+        <div class="ejercicio2 pt-5">
+            <form method="post" id="formEjercicio2" onsubmit="procesarEjercicio2(event)">
+
+                <div class="form-outline mb-4">
+                    <label class="form-label" for="task">Add Task</label>
+                    <input type="text" name="task" id="task" class="form-control" />
+
+                </div>
+                <div class="col-12">
+                    <button type="submit" class="btn btn-primary" onsubmit="procesarEjercicio2()">Submit</button>
+                </div>
+            </form>
+        </div>
+        <div class="listaTareas">
+            <!-- pintar lista con JS -->
+        </div>
+
+        <!-- <input type="checkbox" name="done" id="done"> -->
+        <!-- 
+3.- Crea un formulario con dos campos de entrada numérica y botones para realizar operaciones básicas
+ (suma, resta, multiplicación y división). Implementa JavaScript 
+-->
+        <div class="ejercicio3 mb-3 pt-5">
+            <form method="post" id="formEjercicio3" onsubmit="procesarEjercicio3(event)">
+                <div class="form-outline mb-4 w-25 m-auto text-center">
+                    <label class="form-label" for="num1">Numero 1</label>
+                    <input type="number" type="number" name="num1" id="num1" class="form-control" />
+
+                </div>
+                <div class="form-outline  mb-4 w-25 m-auto text-center">
+                    <label class="form-label" for="num2">Numero 2</label>
+                    <input type="number" type="number" name="num2" id="num2" class="form-control" />
+
+                </div>
+                <div class="row row-cols-4 text-center">
+
+
+                    <div class="col">
+                        <button type="submit" class="btn btn-primary" value="sumar">Sumar</button>
+                    </div>
+                    <div class="col">
+                        <button type="submit" class="btn btn-primary" value="restar">Restar</button>
+                    </div>
+                    <div class="col">
+                        <button type="submit" class="btn btn-primary" value="multiplicar">Multiplicar</button>
+                    </div>
+                    <div class="col">
+                        <button type="submit" class="btn btn-primary" value="dividir">Dividir</button>
+                    </div>
+            </form>
+        </div>
+    </div>
+    <div id="resultadoEj3" class="text-center">
+    </div>
+    <!-- 
+4.- Crea un formulario de registro de usuarios que solicite información básica, como nombre, correo electrónico y contraseña. 
+Implementa JavaScript para validar la entrada del usuario, mostrar mensajes de error y enviar los datos del formulario a 
+una API ficticia (simplemente, una vez validados los datos, que salga un alert de registro exitoso). 
+Además, agrega una confirmación de contraseña y utiliza expresiones regulares para validar la fortaleza de la contraseña.
+-->
+    <div class="ejercicio4 mb-3 p-5">
+        <form method="post">
+            <label for="name">Name</label>
+            <input type="text" name="name" id="name">
+
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email">
+
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password">
+
+            <label for="repitePassword">Password Again</label>
+            <input type="password" name="repitePassword" id="repitePassword">
+        </form>
+
+    </div>
+
+    </div>
+
+</body>
+
+</html>
