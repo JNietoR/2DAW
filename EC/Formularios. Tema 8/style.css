@@ -1,7 +1,9 @@
-
-.fondo{
-    background-image: url(https://images8.alphacoders.com/130/1302542.png);
+body{
+    background-image: url(fondo.jpg) !important;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: cover !important;
     
+}
+li{
+    list-style:none;
 }

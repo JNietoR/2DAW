@@ -14,7 +14,9 @@
         crossorigin="anonymous"></script>
 </head>
 
-<body class="fondo">
+<body>
+
+    <h1 class="text-center text-white">Practica Tema 8</h1>
     <!--    
 1.- Crea un formulario que solicite el nombre y la edad del usuario. Implementa una validación que asegure que el nombre solo contenga letras 
 y espacios, y que la edad sea un número positivo.
@@ -32,7 +34,8 @@ y espacios, y que la edad sea un número positivo.
             <!-- Email input -->
             <div class="form-outline mb-4">
                 <label class="form-label" for="age">Edad</label>
-                <input type="number" type="number" name="age" id="age" oninput="comprobarEdad()" class="form-control" />
+                <input type="number" type="number" name="age" id="age" min="1" oninput="comprobarEdad()"
+                    class="form-control" />
 
             </div>
             <div class="col-12">
@@ -70,6 +73,7 @@ y permitir su eliminación..
 -->
         <div class="ejercicio3 mb-3 pt-5">
             <form method="post" id="formEjercicio3" onsubmit="procesarEjercicio3(event)">
+
                 <div class="form-outline mb-4 w-25 m-auto text-center">
                     <label class="form-label" for="num1">Numero 1</label>
                     <input type="number" type="number" name="num1" id="num1" class="form-control" />
@@ -97,34 +101,47 @@ y permitir su eliminación..
                     </div>
             </form>
         </div>
+        <div id="resultadoEj3" class="text-center">
     </div>
-    <div id="resultadoEj3" class="text-center">
-    </div>
-    <!-- 
+<!-- 
 4.- Crea un formulario de registro de usuarios que solicite información básica, como nombre, correo electrónico y contraseña. 
 Implementa JavaScript para validar la entrada del usuario, mostrar mensajes de error y enviar los datos del formulario a 
 una API ficticia (simplemente, una vez validados los datos, que salga un alert de registro exitoso). 
 Además, agrega una confirmación de contraseña y utiliza expresiones regulares para validar la fortaleza de la contraseña.
 -->
-    <div class="ejercicio4 mb-3 p-5">
-        <form method="post">
-            <label for="name">Name</label>
-            <input type="text" name="name" id="name">
 
-            <label for="email">Email</label>
-            <input type="email" name="email" id="email">
+<div class="ejercicio4 mb-3 p-5">
+    <form method="post" id="formEjercicio4" onsubmit="procesarEjercicio4(event)">
+        <div class="form-outline mb-4">
+            <label class="form-label" for="name">User</label>
+            <input type="text" name="user" id="user" class="form-control" />
 
-            <label for="password">Password</label>
-            <input type="password" name="password" id="password">
+        </div>
+        <div class="form-outline mb-4">
+            <label class="form-label" for="name">Email</label>
+            <input type="email" name="email" id="email" class="form-control" />
 
-            <label for="repitePassword">Password Again</label>
-            <input type="password" name="repitePassword" id="repitePassword">
-        </form>
+        </div>
+        <div class="form-outline mb-4">
+            <label class="form-label" for="name">Password</label>
+            <input type="password" name="password" id="password" class="form-control" />
 
+        </div>
+        <div class="form-outline mb-4">
+            <label class="form-label" for="name">Repite Password</label>
+            <input type="password" name="repitePassword" id="repitePassword" class="form-control" />
+
+        </div>
+        <div class="col-12">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </form>
+
+</div>
+<script src="script.js"></script>
     </div>
-
-    </div>
-
+    
+    
 </body>
 
 </html>

@@ -31,7 +31,8 @@ function procesarEjercicio1(event){
 
 function agregarTarea(task) {
     // Crear un elemento li
-    var listItem = document.createElement('span');
+    var listItem = document.createElement('li');
+    listItem.style.marginRight="5px";
     listItem.textContent = task;
 
     // Crear un botón para eliminar la tarea
@@ -120,4 +121,53 @@ function procesarEjercicio3(event) {
     }
 }
 
+function comprobarEmail(){
+    var emailInput = document.getElementById('email');
+    var email = emailInput.value;
+    var regex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+
+    if (!regex.test(email)) {
+        alert('Por favor introduzca un email válido');
+        // Reinicia el valor del campo email al introducir algo que no esta en la expresión regular
+        emailInput.value = '';
+    }else{
+        return true;
+    }
+}
+
+function comprobarContraseña() {
+    
+    var passInput = document.getElementById('password');
+    var regex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
+    var pass1 = passInput.value;
+
+    if (!regex.test(pass1)) {
+        alert('Por favor introduzca una contraseña con al menos un dígito, una letra minúscula, una letra mayúscula y con 8 caracteres mínimo.');
+        // Reinicia el valor del campo password al introducir algo que no está en la expresión regular
+    }else{
+        return true;
+    }
+}
+function contraseñasIguales(){
+    var pass1 = document.getElementById('password');
+    var pass2 = document.getElementById('repitePassword');
+    if (pass1.value != pass2.value) {
+        alert('Por favor introduzca la misma contraseña');
+        pass2.value = '';
+    }else{
+        return true;
+    }
+}
+
+function procesarEjercicio4(event) {
+    event.preventDefault();
+    var emailValido = comprobarEmail(); // Asegúrate de que esta función devuelva un valor booleano
+    var contrasenaValida = comprobarContraseña();
+    var contrasenasIguales = contraseñasIguales(); // Asegúrate de que esta función devuelva un valor booleano
+
+    // Verifica si todas las funciones de comprobación son exitosas y no hay campos vacíos
+    if (emailValido && contrasenaValida && contrasenasIguales ) {
+        alert('Registro exitoso. Todos los campos son válidos.');
+    }
+}
 
