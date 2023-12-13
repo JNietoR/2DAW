@@ -1,8 +1,6 @@
-th{
-    min-width:50px;
-    border:1px solid black';
+.fondo{
+    background-image: url("https://wallpapers.com/images/hd/digimon-pictures-yn52ttp6qiey4xog.jpg");
 }
-td{
-    min-width:50px;
-    border:1px solid black';
+.fondoblanco{
+    background-color:hsla(0, 0%, 100%, 0.7);
 }

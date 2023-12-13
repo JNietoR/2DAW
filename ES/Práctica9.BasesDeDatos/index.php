@@ -1,17 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DIGIMON. Práctica 9. Bases de datos</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .fondo {
+            background-image: url("https://i.pinimg.com/originals/cc/8c/5e/cc8c5e6e31019b7ced8c08d5ed4465f6.png");
+        }
+       body{
+        background-color:#8b9aef;
+       }
+    </style>
 </head>
 
 <body>
-    <div class="h-screen flex flex-col justify-center items-center bg-blue-100">
-        <h1 class="mb-6 text-3xl">- Digimon -</h1>
-        <div class="py-4 px-6 bg-white shadow sm:rounded">
+    <div class="h-screen flex flex-col justify-center items-center fondo">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Digimon_Logo.svg/1280px-Digimon_Logo.svg.png">
+        <div class="py-4 px-6 fondoblanco sm:rounded" id="body">
             <?php
             //iniciar sesión para acceder a las variables creadas al usar credenciales correctas en el login
             session_start();
@@ -78,10 +86,10 @@
                     // Agregar datos de cada fila a la cadena HTML
                     while ($row = $resultado->fetch_assoc()) {
                         $tablaHTML .= "<tr>
-                        <td class='text-center' style='min-width:50px;border:1px solid black'>" . $row["id"] . "</td>
-                        <td style='min-width:220px;border:1px solid black'>" . $row["name"] . "</td>
-                        <td style='min-width:220px;border:1px solid black'>" . $row["type"] . "</td>
-                        <td style='min-width:100px;border:1px solid black'>
+                        <td class='text-center bg-white' style='min-width:50px;border:1px solid black'>" . $row["id"] . "</td>
+                        <td class='bg-white' style='min-width:220px;border:1px solid black'>" . $row["name"] . "</td>
+                        <td class='bg-white' style='min-width:220px;border:1px solid black'>" . $row["type"] . "</td>
+                        <td class='bg-white' style='min-width:100px;border:1px solid black'>
                             <form action='index.php' method='post' id='editarDigimon'>
                                 <input type='hidden' name='digimon_id_editar' value='" . $row["id"] . "' />
                                 <input type='hidden' name='digimon_name_editar' value='" . $row["name"] . "' />
@@ -92,7 +100,7 @@
                                 </div>
                             </form>
                         </td>
-                        <td style='min-width:100px;border:1px solid black'>
+                        <td class='bg-white' style='min-width:100px;border:1px solid black'>
                             <form action='index.php' method='POST' id='eliminarDigimon'>
                                 <input type='hidden' name='digimon_id_eliminar' value='" . $row["id"] . "' />
                                 <div class='flex items-center m-1 justify-center'>
@@ -182,36 +190,40 @@
                 <?php
                 if (isset($_POST['EditarDigimon'])) {
                     echo "<h1 class='mt-6 text-3xl text-center'>- Edit Digimon " . $_POST['digimon_name_editar'] . " with ID :" . $_POST['digimon_id_editar'] . " -</h1>";
-                ?>
-                <form action="index.php" method="post" id="modificarDigimon">
-                    <div class="flex items-center gap-4 justify-center mt-8">
-                        <label class="text-sm text-gray-700 italic" for="newname">New Name</label>
-                        <input class='rounded shadow border border-gray-300 p-2 mt-1 w-full outline-none' type="text" name="newname" />
-                        <label class="text-sm text-gray-700 italic" for="newtype">New Type</label>
-                        <input class='rounded shadow border border-gray-300 p-2 mt-1 w-full outline-none' type="text" name="newtype" />
-                        <input type="hidden" name="digimon_id_editar" value="<?php echo $_POST['digimon_id_editar']; ?>" />
-                        <input type="submit" class="px-4 py-2 bg-blue-800 rounded text-xs text-white uppercase hover:bg-blue-700" name="modificarDigimon" value="Edit Digimon" />
-                    </div>
-                </form>
-            <?php
+                    ?>
+                    <form action="index.php" method="post" id="modificarDigimon">
+                        <div class="flex items-center gap-4 justify-center mt-8">
+                            <label class="text-sm text-gray-700 italic" for="newname">New Name</label>
+                            <input class='rounded shadow border border-gray-300 p-2 mt-1 w-full outline-none' type="text"
+                                name="newname" />
+                            <label class="text-sm text-gray-700 italic" for="newtype">New Type</label>
+                            <input class='rounded shadow border border-gray-300 p-2 mt-1 w-full outline-none' type="text"
+                                name="newtype" />
+                            <input type="hidden" name="digimon_id_editar" value="<?php echo $_POST['digimon_id_editar']; ?>" />
+                            <input type="submit"
+                                class="px-4 py-2 bg-blue-800 rounded text-xs text-white uppercase hover:bg-blue-700"
+                                name="modificarDigimon" value="Edit Digimon" />
+                        </div>
+                    </form>
+                    <?php
                 }
-            
+
                 if (isset($_POST['modificarDigimon'])) {
                     $name = $_POST['newname'];
                     $type = $_POST['newtype'];
                     $id = $_POST['digimon_id_editar'];
                     conexionBBDD();
                     $conexion = conexionBBDD();
-            
+
                     // Evitar inyección SQL utilizando una sentencia preparada
                     $sqlquery = "UPDATE digimons SET name = ?, type= ? WHERE id = ?;";
-            
+
                     // Preparar statement de la consulta
                     $stmt = $conexion->prepare($sqlquery);
-            
+
                     // asociar la id del digimon al statement
                     $stmt->bind_param("ssi", $name, $type, $id);
-            
+
                     // Ejecutar el statement
                     if ($stmt->execute()) {
                         echo "<h1 class='text-center m-2'>Digimon editado correctamente</h1>";
@@ -219,7 +231,7 @@
                         // si ocurre algún error
                         echo "Ha ocurrido un error con esta acción" . $stmt->error;
                     }
-            
+
                     // Cerrar la declaración
                     $stmt->close();
                     cerrarConexionBBDD($conexion);
@@ -244,6 +256,3 @@
 </body>
 
 </html>
-
-
-
