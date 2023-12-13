@@ -27,6 +27,33 @@
             </form>
         </div>
     </div>
+    <!-- 
+        PDO significa PHP Data Objects, Objetos de Datos de PHP, una extensión para acceder a bases de datos. 
+        PDO permite acceder a diferentes sistemas de bases de datos con un controlador específico (MySQL, SQLite, Oracle...) mediante el cual se conecta. 
+        Independientemente del sistema utilizado, se emplearán siempre los mismos métodos, lo que hace que cambiar de uno a otro resulte más sencillo.
+        
+        El sistema PDO se fundamenta en 3 clases: PDO, PDOStatement y PDOException. La clase PDO se encarga de mantener la conexión a la base de datos 
+        y otro tipo de conexiones específicas como transacciones, además de crear instancias de la clase PDOStatement. 
+        Es ésta clase, PDOStatement, la que maneja las sentencias SQL y devuelve los resultados. La clase PDOException se utiliza para manejar los errores.
+        
+        Soporta muchas bases de datos: 
+            PDO ofrece soporte a 12 tipos de bases de datos, incluyendo MySQL, PostgreSQL, SQLite, SQL Server, y más. 
+            Esto proporciona flexibilidad para cambiar de una base de datos a otra sin tener que modificar significativamente el código.
+
+        No hay que reescribir el código si se cambia de base de datos:
+            Gracias a la abstracción de PDO, puedes escribir código que sea independiente de la base de datos subyacente. 
+            Si decides cambiar de una base de datos a otra, es probable que solo necesites ajustar la cadena de conexión, 
+            sin tener que reescribir todas las consultas y operaciones de la base de datos.
+
+        Velocidad:
+            PDO puede ser más rápido en comparación con algunas otras extensiones de acceso a bases de datos en PHP. Esto se debe a que utiliza "prepared statements" 
+            y "bound parameters", lo que puede mejorar la eficiencia y la seguridad de las consultas. 
+            Ambos drivers, PDO y MySQLi, son bastante rápidos. Sin embargo, MySQLi es un poco más rápido, 
+            aproximadamente 2.5% en consultas no preparadas y 6.5% en consultas preparadas. 
+
+        Facilita la instalación:
+            PDO está incluido como una extensión estándar en PHP, lo que significa que generalmente no necesitas instalar extensiones adicionales.
+    -->
     
 </body>
 </html>

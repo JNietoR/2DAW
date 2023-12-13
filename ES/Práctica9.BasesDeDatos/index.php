@@ -13,12 +13,23 @@
        body{
         background-color:#8b9aef;
        }
+       #gif{
+        width: 100px;
+        height:100px;
+       }
+       #gif1{
+        width: 110px;
+        height:110px;
+       }
+       #logo{
+        transform: scale(0.9);
+       }
     </style>
 </head>
 
 <body>
     <div class="h-screen flex flex-col justify-center items-center fondo">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Digimon_Logo.svg/1280px-Digimon_Logo.svg.png">
+        <img id="logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Digimon_Logo.svg/1280px-Digimon_Logo.svg.png">
         <div class="py-4 px-6 fondoblanco sm:rounded" id="body">
             <?php
             //iniciar sesión para acceder a las variables creadas al usar credenciales correctas en el login
@@ -27,17 +38,14 @@
                 // Usuario Admin está autenticado
                 ?>
                 <div class="flex items-center gap-4 justify-center mt-8">
-                    <?php
-                    // Imprime el nombre de usuario ademas de la fecha y hora almacenada en la variable de sesión
-                    echo "Welcome user " . $_SESSION['user_id'];
-                    ?>
+                <img id="gif" src="https://media0.giphy.com/media/eMy3TwSUHfRWRYSDSF/giphy.gif?cid=790b76116vccem0b6hlhy0a1fkf5taw3oi2stxoaid1kmzmm&ep=v1_gifs_search&rid=giphy.gif&ct=s">
                     </form>
                     <form method="post" action="logout.php">
-
                         <button type="submit" name="logout"
                             class="px-4 py-2 bg-blue-800 rounded text-xs text-white uppercase hover:bg-blue-700">Log
                             Out</button>
                     </form>
+                    <img id="gif1" src="https://media3.giphy.com/media/KgDpDFkGeLcIILj8A2/giphy.gif">
                 </div>
                 <?php
                 // Establecer la conexión a la base de datos (reemplaza con tus propias credenciales)
