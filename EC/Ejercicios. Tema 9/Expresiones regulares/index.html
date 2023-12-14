@@ -11,12 +11,19 @@
     <!-- 
         Primer grupo:
 
-a) ho*a: Valida una cadena que tiene que empezar por 'h' debe continuar con minimo una 'o' y terminar con una 'a'.
-b) ([B-D]|[F-H]|[J-N]|[P-T]|[V-Z]): Con esta validación se aceptaria solo una letra mayúscula, excluyendo las letras A y E, 
+a) ho*a: 
+    Valida una cadena que tiene que empezar por 'h' debe continuar con minimo una 'o' y terminar con una 'a'.
+b) ([B-D]|[F-H]|[J-N]|[P-T]|[V-Z]): 
+    Con esta validación se aceptaria solo una letra mayúscula, excluyendo las letras A y E, 
     ya que se quedan fuera de estos rangos [B-D]|[F-H].
-c) ^[0-9]{5}$: Valida cadenas que tienen cinco dígitos del 0 al 9.
-d) [0-4][0-9][0-2][0-9]{3}: Valida cadenas que representan un año en el rango de 0000 a 4299.
-e) ([0-4][0-9]|5[0-2])[0-9]{3}: Valida códigos numéricos de tres dígitos, donde el primer dígito puede ser de 0 a 4, o 5 seguido de 0, 1 o 2.
+c) ^[0-9]{5}$:
+     Valida cadenas que tienen cinco dígitos del 0 al 9.
+d) [0-4][0-9][0-2][0-9]{3}: 
+    Valida un número de cuatro dígitos donde el primer dígito está entre 0 y 4 (inclusive),
+    el segundo dígito es cualquier número del 0 al 9, el tercer dígito está entre 0 y 2 (inclusive), y los tres últimos dígitos son cualquier número del 0 al 9.
+e) ([0-4][0-9]|5[0-2])[0-9]{3}: 
+        Valida un número de cuatro dígitos donde el primer dígito puede ser de 0 a 4, o puede ser un 5, en el caso de que sea un 5 debe ser seguido de 0, 1 o 2
+        y con [0-9]{3} los tres últimos dígitos pueden ser cualquier número del 0 al 9. 
 f) (^.+[a-z])(.*[A-Z])(.*\d)[a-zA-Z]{8,12}$: Valida cadenas que contienen al menos una minúscula, una mayúscula, un dígito y tienen una longitud total de 8 a 12 caracteres.
 Segundo grupo:
 
@@ -33,3 +40,5 @@ j) 95[0-9]\s* ((\d{6}$)|((\d{2}\s){2}\d{2}$)|((\d{3}\s){2})): Similar a la anter
     -->
 </body>
 </html>
+
+
