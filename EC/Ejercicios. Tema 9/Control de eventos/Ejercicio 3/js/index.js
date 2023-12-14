@@ -9,15 +9,19 @@ function handleKeyPress(e) {
 
     switch (key) {
         case 'ArrowUp':
+        case 'w':
             top = Math.max(0, top - 20); 
             break;
         case 'ArrowDown':
+        case 's':
             top = Math.min(window.innerHeight - cuadro.offsetHeight, top + 20); 
             break;
         case 'ArrowLeft':
+        case 'a':
             left = Math.max(0, left - 20); 
             break;
         case 'ArrowRight':
+        case 'd':
             left = Math.min(window.innerWidth - cuadro.offsetWidth, left + 20); 
             break;
     }
