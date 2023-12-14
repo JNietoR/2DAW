@@ -8,5 +8,28 @@
     <link rel="stylesheet" href="./styles/index.css">
 </head>
 <body>
+    <!-- 
+        Primer grupo:
+
+a) ho*a: Valida una cadena que tiene que empezar por 'h' debe continuar con minimo una 'o' y terminar con una 'a'.
+b) ([B-D]|[F-H]|[J-N]|[P-T]|[V-Z]): Con esta validación se aceptaria solo una letra mayúscula, excluyendo las letras A y E, 
+    ya que se quedan fuera de estos rangos [B-D]|[F-H].
+c) ^[0-9]{5}$: Valida cadenas que tienen cinco dígitos del 0 al 9.
+d) [0-4][0-9][0-2][0-9]{3}: Valida cadenas que representan un año en el rango de 0000 a 4299.
+e) ([0-4][0-9]|5[0-2])[0-9]{3}: Valida códigos numéricos de tres dígitos, donde el primer dígito puede ser de 0 a 4, o 5 seguido de 0, 1 o 2.
+f) (^.+[a-z])(.*[A-Z])(.*\d)[a-zA-Z]{8,12}$: Valida cadenas que contienen al menos una minúscula, una mayúscula, un dígito y tienen una longitud total de 8 a 12 caracteres.
+Segundo grupo:
+
+a) \d{6}$: Valida cadenas que contienen exactamente seis dígitos al final de la cadena.
+b) ^[a-z0-9-]+$: Valida cadenas que consisten en letras minúsculas, dígitos y guiones, sin espacios y otros caracteres.
+c) ^95[0-9]\s*(\d{6}$): Valida cadenas que comienzan con '95', seguido de un dígito, seguido opcionalmente de espacios y seis dígitos al final de la cadena.
+d) (\d{2}\s){2}: Valida cadenas que contienen dos dígitos seguidos de un espacio, repetidos dos veces.
+e) (\d{2}\s){2}\d{2}$: Valida cadenas que contienen dos dígitos seguidos de un espacio, repetidos dos veces, seguido de dos dígitos al final de la cadena.
+f) ^95[0-9]\s*(\d{2}\s){2}\d{2}$: Valida cadenas que comienzan con '95', seguido de un dígito, seguido opcionalmente de espacios, seguido de dos pares de dígitos seguidos de un espacio, y finalmente dos dígitos al final de la cadena.
+g) (\d{3}\s){2}: Valida cadenas que contienen tres dígitos seguidos de un espacio, repetidos dos veces.
+h) ^95[0-9]\s*(\d{3}\s){2}: Valida cadenas que comienzan con '95', seguido de un dígito, seguido opcionalmente de espacios, seguido de dos pares de tres dígitos seguidos de un espacio.
+i) 95[0-9]\s* ((\d{6}$)|((\d{2}\s){2}\d{2}$)): Valida cadenas que comienzan con '95', seguido de un dígito, seguido opcionalmente de espacios, seguido de o bien seis dígitos al final de la cadena o dos pares de dígitos seguidos de un espacio y dos dígitos al final de la cadena.
+j) 95[0-9]\s* ((\d{6}$)|((\d{2}\s){2}\d{2}$)|((\d{3}\s){2})): Similar a la anterior, pero también permite dos pares de tres dígitos seguidos de un espacio al final de la cadena.
+    -->
 </body>
 </html>
