@@ -1,44 +1,147 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="./js/index.js"></script>
+    <title>Expresiones Regulares</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="./styles/index.css">
 </head>
+
 <body>
-    <!-- 
-        Primer grupo:
 
-a) ho*a: 
-    Valida una cadena que tiene que empezar por 'h' debe continuar con minimo una 'o' y terminar con una 'a'.
-b) ([B-D]|[F-H]|[J-N]|[P-T]|[V-Z]): 
-    Con esta validación se aceptaria solo una letra mayúscula, excluyendo las letras A y E, 
-    ya que se quedan fuera de estos rangos [B-D]|[F-H].
-c) ^[0-9]{5}$:
-     Valida cadenas que tienen cinco dígitos del 0 al 9.
-d) [0-4][0-9][0-2][0-9]{3}: 
-    Valida un número de cuatro dígitos donde el primer dígito está entre 0 y 4 (inclusive),
-    el segundo dígito es cualquier número del 0 al 9, el tercer dígito está entre 0 y 2 (inclusive), y los tres últimos dígitos son cualquier número del 0 al 9.
-e) ([0-4][0-9]|5[0-2])[0-9]{3}: 
-        Valida un número de cuatro dígitos donde el primer dígito puede ser de 0 a 4, o puede ser un 5, en el caso de que sea un 5 debe ser seguido de 0, 1 o 2
-        y con [0-9]{3} los tres últimos dígitos pueden ser cualquier número del 0 al 9. 
-f) (^.+[a-z])(.*[A-Z])(.*\d)[a-zA-Z]{8,12}$: Valida cadenas que contienen al menos una minúscula, una mayúscula, un dígito y tienen una longitud total de 8 a 12 caracteres.
-Segundo grupo:
-
-a) \d{6}$: Valida cadenas que contienen exactamente seis dígitos al final de la cadena.
-b) ^[a-z0-9-]+$: Valida cadenas que consisten en letras minúsculas, dígitos y guiones, sin espacios y otros caracteres.
-c) ^95[0-9]\s*(\d{6}$): Valida cadenas que comienzan con '95', seguido de un dígito, seguido opcionalmente de espacios y seis dígitos al final de la cadena.
-d) (\d{2}\s){2}: Valida cadenas que contienen dos dígitos seguidos de un espacio, repetidos dos veces.
-e) (\d{2}\s){2}\d{2}$: Valida cadenas que contienen dos dígitos seguidos de un espacio, repetidos dos veces, seguido de dos dígitos al final de la cadena.
-f) ^95[0-9]\s*(\d{2}\s){2}\d{2}$: Valida cadenas que comienzan con '95', seguido de un dígito, seguido opcionalmente de espacios, seguido de dos pares de dígitos seguidos de un espacio, y finalmente dos dígitos al final de la cadena.
-g) (\d{3}\s){2}: Valida cadenas que contienen tres dígitos seguidos de un espacio, repetidos dos veces.
-h) ^95[0-9]\s*(\d{3}\s){2}: Valida cadenas que comienzan con '95', seguido de un dígito, seguido opcionalmente de espacios, seguido de dos pares de tres dígitos seguidos de un espacio.
-i) 95[0-9]\s* ((\d{6}$)|((\d{2}\s){2}\d{2}$)): Valida cadenas que comienzan con '95', seguido de un dígito, seguido opcionalmente de espacios, seguido de o bien seis dígitos al final de la cadena o dos pares de dígitos seguidos de un espacio y dos dígitos al final de la cadena.
-j) 95[0-9]\s* ((\d{6}$)|((\d{2}\s){2}\d{2}$)|((\d{3}\s){2})): Similar a la anterior, pero también permite dos pares de tres dígitos seguidos de un espacio al final de la cadena.
-    -->
+    <div class="container mt-5">
+        <table class="table table-bordered">
+            <thead class="thead-dark text-center">
+                <tr>
+                    <th>Expresión Regular</th>
+                    <th>Explicación</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>ho*a</td>
+                    <td>Valida una cadena que tiene que empezar por h "h", como segundo caracter minimo una o "o*" y
+                        terminar con una a "a".</td>
+                </tr>
+                <tr>
+                    <td>([B-D]|[F-H]|[J-N]|[P-T]|[V-Z])</td>
+                    <td>Valida un caracter que debe ser una letra mayúscula, excluyendo las letras A y E, ya que se
+                        quedan fuera
+                        de estos rangos "[B-D]|[F-H]"</td>
+                </tr>
+                <tr>
+                    <td>^[0-9]{5}$</td>
+                    <td>Valida cadenas que tienen cinco dígitos del 0 al 9.</td>
+                </tr>
+                <tr>
+                    <td>[0-4][0-9][0-2][0-9]{3}</td>
+                    <td>Valida un número de cuatro dígitos donde el primer dígito está entre 0 y 4 (inclusive)
+                        "[0-4]",el
+                        segundo dígito
+                        es cualquier número del 0 al 9 "[0-9]", el tercer dígito está entre 0 y 2 (inclusive) "[0-2]", y
+                        los
+                        tres últimos
+                        dígitos son cualquier número del 0 al 9 "[0-9]{3}".</td>
+                </tr>
+                <tr>
+                    <td>([0-4][0-9]|5[0-2])[0-9]{3}</td>
+                    <td>Valida un número de cuatro dígitos donde el primer dígito puede ser de 0 a 4 y el segundo de 0 a
+                        9
+                        "[0-4][0-9]", y si este primer caracter puede ser un 5 en este caso el segundo caracter debe ser
+                        0 1 2
+                        "5[0-2]", en el
+                        por último con "[0-9]{3}" los tres últimos dígitos pueden ser cualquier número del 0 al 9. </td>
+                </tr>
+                <tr>
+                    <td>(^.+[a-z])(.*[A-Z])(.*\d)[a-zA-Z]{8,12}$</td>
+                    <td>Con el "^" y el "$" indicamos que la validación debe ocurrir desde el inicio de la cadena hasta
+                        el
+                        final,
+                        con esto indicamos que debe contener una minuscula al menos "[a-z]", con esta parte que contenga
+                        una
+                        mayúscula "[A-Z]", con esta siguiente que contenga un dígito "\d", además con esto hacemos que
+                        los
+                        caracteres restantes deben ser letras minsuculas o mayusculas "[a-zA-Z]" y por último le
+                        indicamos que
+                        debe tener una longitud de 8 a 12 caracteres con esta parte "{8,12}".</td>
+                </tr>
+                <tr>
+                    <td>\d{6}$</td>
+                    <td>Valida cadenas que contengan exactamente seis dígitos "\d{6}" desde el final de la cadena "$".
+                    </td>
+                </tr>
+                <tr>
+                    <td>^[a-z0-9-]+$</td>
+                    <td>Valida cadenas que solo pueden contener letras minúsculas "a-z", dígitos "0-9" y guiones "-",
+                        con el "^"
+                        al inicio y el "$" al final indicamos que debe validarse de incio a fin la cadena</td>
+                </tr>
+                <tr>
+                    <td>^95[0-9]\s*(\d{6}$)</td>
+                    <td>Valida cadenas que comienzan con 95 "^95", seguido de un dígito "[0-9]", seguido opcionalmente
+                        de
+                        espacios "\s*" y seis dígitos al final de la cadena.</td>
+                </tr>
+                <tr>
+                    <td>(\d{2}\s){2}</td>
+                    <td>Valida cadenas que contienen dos dígitos seguidos de un espacio, repetidos dos veces.</td>
+                </tr>
+                <tr>
+                    <td>(\d{2}\s){2}\d{2}$</td>
+                    <td>Valida cadenas que contienen dos dígitos "\d{2}" seguidos de un espacio "\s", esto dos digitos
+                        seguidos
+                        de un espacio debe repetirse dos veces al llevar "{2}" despues del parentesis que los engloba,
+                        seguido
+                        de dos dígitos al final de la cadena "\d{2}".</td>
+                </tr>
+                <tr>
+                    <td>^95[0-9]\s*(\d{2}\s){2}\d{2}$</td>
+                    <td>Valida cadenas que comienzan con 95 "^95", seguido de un dígito "[0-9]", seguido opcionalmente
+                        de
+                        espacios "\s*", seguido
+                        de dos pares de dígitos seguidos de un espacio "(\d{2}\s){2}", y finalmente dos dígitos al final
+                        de la
+                        cadena "\d{2}$".</td>
+                </tr>
+                <tr>
+                    <td>(\d{3}\s){2}</td>
+                    <td>Valida cadenas que contienen tres dígitos seguidos de un espacio "(\d{3}\s)", repetidos dos
+                        veces "{2}".
+                    </td>
+                </tr>
+                <tr>
+                    <td>^95[0-9]\s*(\d{3}\s){2}</td>
+                    <td>Valida cadenas que comienzan con 95 "^95", seguido de un dígito "[0-9]", seguido opcionalmente
+                        de
+                        espacios "\s*", seguido
+                        de dos pares "(\d{3}\s){2}" de tres dígitos terminando en un espacio.</td>
+                </tr>
+                <tr>
+                    <td>95[0-9]\s* ((\d{6}$)|((\d{2}\s){2}\d{2}$))</td>
+                    <td>Valida cadenas que comienzan con 95 "95", seguido de un dígito "[0-9]", seguido opcionalmente de
+                        espacios "\s*", seguido
+                        de seis dígitos al final de la cadena "(\d{6}$)" o dos pares de dígitos seguidos de un espacio y
+                        dos
+                        dígitos
+                        al final de la cadena "((\d{2}\s){2}\d{2}$)".</td>
+                </tr>
+                <tr>
+                    <td>95[0-9]\s* ((\d{6}$)|((\d{2}\s){2}\d{2}$)|((\d{3}\s){2}))</td>
+                    <td>Valida cadenas que comienzan con 95 "95", seguido de un dígito "[0-9]", seguido opcionalmente de
+                        espacios "\s*", seguido
+                        de seis dígitos al final de la cadena "(\d{6}$)" o dos pares de dígitos seguidos de un espacio y
+                        dos
+                        dígitos
+                        al final de la cadena "((\d{2}\s){2}\d{2}$)" o en lugar de estas dos opciones dos pares de tres
+                        dígitos
+                        seguidos de un espacio al final de
+                        la cadena "((\d{3}\s){2})".</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </body>
+
 </html>
-
-
