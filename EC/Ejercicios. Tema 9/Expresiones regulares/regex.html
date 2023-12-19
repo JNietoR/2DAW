@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expresiones regulares</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./styles/index.css">
+</head>
+
+<body>
+    <div class="container mt-5">
+        <table class="table table-bordered">
+            <thead class="thead-dark text-center">
+                <tr>
+                    <th>Expresión Regular</th>
+                    <th>Explicación</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        ^[^\s@]+@[^\s@]+\.[^\s@]+$
+                    </td>
+                    <td>
+                        <ul>
+                            <li>
+                                ^[^\s@]+ La cadena no comienze ^ por un espacio en blanco "\s" ni un "@". Luego,
+                                [^\s@]+ significa uno o más caracteres que no son ni espacio en blanco ni "@".
+                            </li>
+                            <li>
+                                @ Para que despues de esto tenga un '@' obligatoriamente
+                            </li>
+                            <li>
+                                [^\s@]+\. Después de este @ volvemos a agregar la misma expresion que al principio para
+                                que no pueda haber espacios en blanco o @ y agrgamos un . al final para obligar a que
+                                lo tenga despues de esta parte.
+                            </li>
+                            <li>
+                                [^\s@]+$ Volvemos a agregar la misma validación con el $ al final para garantizar que el
+                                final de nuestra cadena despues del . no contenga @ ni espacios en blanco de nuevo
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>^[a-zA-Z][a-zA-Z0-9_-]{0,15}$
+                    </td>
+                    <td>
+                        <ul>
+                            <li>
+                                ^[a-zA-Z] Indica el inicio de la cadena con ^ se requiere que comience con una letra
+                                mayúscula o minúscula [a-zA-Z].
+                            </li>
+                            <li>
+                                [a-zA-Z0-9_-]{0,15} Se indica que el nombre de usuario puede contener mayúsculas o
+                                minúsculas (a-zA-Z), números del 0 al 9 (0-9), y los ambos guiones (_-). La longitud
+                                total de esta parte puede ser de 1 a 16 caracteres recordando que se empieza a contar
+                                desde el 0.
+                            </li>
+                            <li>
+                                $ Indica el final de la cadena, en este caso no hace falta.
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>^(?=.*[A-Z])[ -~]{8,18}$</td>
+                    <td>
+                        <ul>
+                            <li>
+                                ^ Indica el inicio de la cadena</li>
+                            <li>(?=.*[A-Z]) Asegura que tenga una mayuscula en la cadena</li>
+                            <li>[ -~] Permite que la contraseña contenga cualquier carácter imprimible ASCII
+                                entre el espacio (código 32) y la virgulilla (código 126)</li>
+                            <li>
+                                {8,18} Exige que la longitud de la
+                                contraseña sea de 8 a 18 caracteres.
+                            </li>
+                            <li>$ Indica el final de la cadena, en este caso tampoco sería necesaria utilizarla</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        ^#[0-9A-Fa-f]{3}([0-9A-Fa-f]{3})?$
+                    </td>
+                    <td>
+                        <ul>
+                            <li>^# Indica el inicio de la cadena debe ser el caracter #</li>
+                            <li>[0-9A-Fa-f]{3} A continuación puede aparecer 3 caracteres que puedes ser letras de la a
+                                a la f mayusculas o minusculas y numeros del 0 al 9, esta parte es obligatoria.</li>
+                            <li>Se vuelve a repetir la misma expresión de antes continuada de una ? que indica que esta
+                                parte es opcional</li>
+                            <li>$ Indica el final de la cadena.</li>
+                        </ul>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>^(http[s]?:\/\/)?(www\.)?[a-zA-Z0-9-]+(\.[a-zA-Z])(\.[a-zA-Z]{2,3})*$
+                    </td>
+                    <td>
+                        <ul>
+                            <li>^(http[s]?:\/\/)? Coincide con el inicio de la cadena y permite que aparezca
+                                opcionalmente "http://" o "https://". El `?` indica que esta parte es opcional.</li>
+                            <li>(www\.)? Permite que aparezca opcionalmente la cadena "www.". El `?` indica que esta
+                                parte es opcional.</li>
+                            <li>[a-zA-Z0-9-]+ Coincide con el nombre del dominio que puede contener letras, números y el
+                                guion ("-").</li>
+                            <li>(\.[a-zA-Z]) Coincide con el primer punto "." Este grupo es obligatorio.</li>
+                            <li>(\.[a-zA-Z]{2,3})* Utiliza un grupo opcional para permitir que aparezcan más puntos
+                                seguidos por 2 o 3 letras. El `*` indica que este grupo puede repetirse cero o más
+                                veces.</li>
+                            <li>$ Coincide con el final de la cadena.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>
