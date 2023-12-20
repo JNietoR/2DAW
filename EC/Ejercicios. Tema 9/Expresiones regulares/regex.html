@@ -118,12 +118,58 @@
                     </td>
                 </tr>
                 <tr>
-                    <td></td>
-                    <td></td>
+                    <td>
+                        ^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$
+                    </td>
+                    <td>
+                        <ul>
+                            <li>
+                                25[0-5] Números entre 250 y 255
+                            </li>
+                            <li>
+                                2[0-4][0-9] Números entre 200 y 249
+                            </li>
+                            <li>
+                                [01]?[0-9][0-9]? Números entre 0 y 199
+                            </li>
+                            <li>
+                                \. El punto que separa los bloques de 3 digitos
+                            </li>
+                        </ul>
+
+                    </td>
                 </tr>
                 <tr>
-                    <td></td>
-                    <td></td>
+                    <td>^<([a-zA-Z]+)( [a-zA-Z]+="[^" ]*")* ?\/?>$
+                    </td>
+                    <td>
+                        <ul>
+                            <li>
+                                ^< Inicio de la cadena con < </li>
+                            <li>
+                                ([a-zA-Z]+) Letras mayusculas o minusculas con el + indica que debe
+                                aparecer una o mas veces pudiendo asi repetirse las letras lo que sea necesario
+                            </li>
+                            <li>
+                                ( [a-zA-Z]+="[^"]*")* En esta agrupación en parentesis le indicamos que consta de un
+                                grupo de letras [a-zA-Z]+, seguido de un parentesis y comillas =" , con esta parte del
+                                grupo [^"]* indicamos que se aceptan todo tipo de caracteres menos las comillas dobles,
+                                continua con unas " para marcar el final del valor del atributo y luego del ) que cierra
+                                esta agrupación un * que indica que este grupo que sirve para el atributo y su valor
+                                puede aparecer de 0 a n veces.
+                            </li>
+                            <li>
+                                ? con la interrogación indicamos que esto es opcional de forma que los atributos son
+                                opcionales
+                            </li>
+                            <li>
+                                \/?> Con esta parte le indicamos que puede terminar en > o en />
+                            </li>
+                            <li>
+                                $ El dolar sirve como siempre para indicar el fin de la cadena
+                            </li>
+                        </ul>
+                    </td>
                 </tr>
             </tbody>
         </table>
