@@ -1,0 +1,42 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>To-Do List</title>
+        <link href="https://unpkg.com/ionicons@4.5.10-1/dist/css/ionicons.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="./styles/index.css">
+    </head>
+    <body>
+
+         <!-- 
+        Se propone realizar una aplicación simple de una lista de tareas (To-Do list). Para ello vamos a usar la arquitectura Modelo-Vista-Controlador.
+Para la parte HTML-CSS hazlo como más te guste siempre y cuando lo que hagas tenga acceso para la parte de Javascript (botones, formularios, etc). 
+
+Para la parte de Javascript crea un archivo llamado mvc:
+
+    - Parte de modelo: va a proporcionar los datos y la lógica de negocio (conjunto de reglas que definen cómo una app procesa los datos). 
+        Esta clase simplemente debe inicializar el array de tareas.
+
+    - Parte de vista: se encarga de mostrar los datos al usuario, recibiendo actualizaciones del modelo y actualizando la interfaz en consecuencia. Esta parte debe
+        - Hacer referencias de elementos DOM que necesitamos manipular (usando getElementById)
+        - Una función que actualice la vista cada vez que cambie las tareas.
+
+    - Parte de controlador: responde a las acciones del usuario y actualiza el modelo y la vista en consecuencia. Esta parte debe:
+        - Agregar un event listener para cuando el usuario envía el formulario (agregar tarea) que esta función maneje el evento. Usa “event.preventDefault()” para evitar que se recargue la página al añadir tareas.
+        - Una función que elimine una tarea
+    -->
+
+        <h1>To-Do List</h1>
+        <div id="todo">
+            <!-- Input para agregar tareas -->
+            <input id="add-item" type="text" name="item" placeholder="Agrega una tarea..." onkeypress="view.addItem(event)">
+            <!-- lista para mostrar las tareas -->
+            <ul id="list"></ul>
+        </div>
+        <footer class="footer">Proyecto de Jorge Nieto Roldán y José Manuel García Muñoz</footer>
+        <script type="text/javascript" src="./js/mvc.js"></script>
+    </body>
+    </html>
+    
