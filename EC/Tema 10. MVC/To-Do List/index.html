@@ -1,42 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
 
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>To-Do List</title>
-        <link href="https://unpkg.com/ionicons@4.5.10-1/dist/css/ionicons.min.css" rel="stylesheet">
-        <link rel="stylesheet" href="./styles/index.css">
-    </head>
-    <body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <link href="https://unpkg.com/ionicons@4.5.10-1/dist/css/ionicons.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Enlace al archivo de estilos personalizados -->
+    <link rel="stylesheet" href="./styles/index.css">
+</head>
 
-         <!-- 
-        Se propone realizar una aplicación simple de una lista de tareas (To-Do list). Para ello vamos a usar la arquitectura Modelo-Vista-Controlador.
-Para la parte HTML-CSS hazlo como más te guste siempre y cuando lo que hagas tenga acceso para la parte de Javascript (botones, formularios, etc). 
+<body class="bg-gray-100 min-h-screen flex flex-col justify-between">
 
-Para la parte de Javascript crea un archivo llamado mvc:
+    <h1 class="text-4xl font-bold mb-4 mt-8 text-center">To-Do List</h1>
+    <div id="todo" class="max-w-md mx-auto bg-white p-4 rounded shadow">
+        <!-- Input para agregar tareas -->
+        <input id="add-item" type="text" name="item" placeholder="Agrega una tarea..."
+            onkeypress="view.addItem(event)"
+            class="w-full px-2 py-1 border rounded mb-2 focus:outline-none focus:border-blue-500">
+        <!-- Lista para mostrar las tareas -->
+        <ul id="list" class="list-none">
+        </ul>
+    </div>
+    <footer class="text-center text-gray-600 py-4">Proyecto de Jorge Nieto Roldán y José Manuel García Muñoz</footer>
+    <script type="text/javascript" src="./js/mvc.js"></script>
+</body>
 
-    - Parte de modelo: va a proporcionar los datos y la lógica de negocio (conjunto de reglas que definen cómo una app procesa los datos). 
-        Esta clase simplemente debe inicializar el array de tareas.
-
-    - Parte de vista: se encarga de mostrar los datos al usuario, recibiendo actualizaciones del modelo y actualizando la interfaz en consecuencia. Esta parte debe
-        - Hacer referencias de elementos DOM que necesitamos manipular (usando getElementById)
-        - Una función que actualice la vista cada vez que cambie las tareas.
-
-    - Parte de controlador: responde a las acciones del usuario y actualiza el modelo y la vista en consecuencia. Esta parte debe:
-        - Agregar un event listener para cuando el usuario envía el formulario (agregar tarea) que esta función maneje el evento. Usa “event.preventDefault()” para evitar que se recargue la página al añadir tareas.
-        - Una función que elimine una tarea
-    -->
-
-        <h1>To-Do List</h1>
-        <div id="todo">
-            <!-- Input para agregar tareas -->
-            <input id="add-item" type="text" name="item" placeholder="Agrega una tarea..." onkeypress="view.addItem(event)">
-            <!-- lista para mostrar las tareas -->
-            <ul id="list"></ul>
-        </div>
-        <footer class="footer">Proyecto de Jorge Nieto Roldán y José Manuel García Muñoz</footer>
-        <script type="text/javascript" src="./js/mvc.js"></script>
-    </body>
-    </html>
-    
+</html>
