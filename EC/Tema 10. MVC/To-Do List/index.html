@@ -1,21 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To-Do List</title>
-    <link href="https://unpkg.com/ionicons@4.5.10-1/dist/css/ionicons.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <!-- Enlace al archivo de estilos personalizados -->
     <link rel="stylesheet" href="./styles/index.css">
 </head>
 
-<body class="bg-gray-100 min-h-screen flex flex-col justify-between">
-
-    <h1 class="text-4xl font-bold mb-4 mt-8 text-center">To-Do List</h1>
+<body class="bg-blue-200 min-h-screen flex flex-col justify-between">
+    <div class="flex justify-center">
+        <img src="https://static.thenounproject.com/png/850545-200.png" alt="" class="max-w-full">
+    </div>
+    <h1 class="text-4xl font-bold mb-2 mt-4 text-center">To-Do List</h1>
     <div id="todo" class="max-w-md mx-auto bg-white p-4 rounded shadow">
-        <!-- Input para agregar tareas -->
         <input id="add-item" type="text" name="item" placeholder="Agrega una tarea..."
             onkeypress="view.addItem(event)"
             class="w-full px-2 py-1 border rounded mb-2 focus:outline-none focus:border-blue-500">
@@ -23,7 +22,7 @@
         <ul id="list" class="list-none">
         </ul>
     </div>
-    <footer class="text-center text-gray-600 py-4">Proyecto de Jorge Nieto Roldán y José Manuel García Muñoz</footer>
+    <footer class="text-center text-black-600 py-4">Proyecto de Jorge Nieto Roldán y José Manuel García Muñoz</footer>
     <script type="text/javascript" src="./js/mvc.js"></script>
 </body>
 

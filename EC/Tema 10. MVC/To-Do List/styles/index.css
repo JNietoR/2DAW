@@ -1,6 +1,3 @@
-/* styles.css */
-
-/* Personaliza estilos según tus necesidades */
 .item {
     display: flex;
     justify-content: space-between;
@@ -13,7 +10,7 @@
 }
 
 .item:hover {
-    background-color: #f2f2f2;
+    background-color: #7fa7f3;
 }
 
 .item-text {
