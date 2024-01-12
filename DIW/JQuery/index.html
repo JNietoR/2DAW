@@ -103,11 +103,15 @@
             });
             $("#darkMode").click(function () {
                 $("body").toggleClass("darkMode");
+                $("#articulo").toggleClass("darkMode");
+                $("body").find("*").toggleClass("darkMode");
             });
+
             $("#hideIMG").click(function () {
                 $("#articulo img").fadeToggle();
             });
         });
     </script>
 </body>
+
 </html>
