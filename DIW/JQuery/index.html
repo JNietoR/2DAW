@@ -10,9 +10,7 @@
         .darkMode {
             background-color: black;
             color: white;
-        }
-
-        ;
+        };
     </style>
 </head>
 
@@ -61,7 +59,7 @@
     </div>
     <script>
         $(document).ready(function () {
-            if ($("articulo h1").length === 0) {
+            if ($("#articulo h1").length === 0) {
                 $("#addH1").show();
                 $("#editH1").hide();
             }
@@ -103,8 +101,6 @@
             });
             $("#darkMode").click(function () {
                 $("body").toggleClass("darkMode");
-                $("#articulo").toggleClass("darkMode");
-                $("body").find("*").toggleClass("darkMode");
             });
 
             $("#hideIMG").click(function () {
