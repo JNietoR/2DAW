@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQuery</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        .darkMode {
+            background-color: black;
+            color: white;
+        }
+
+        ;
+    </style>
+</head>
+
+<body>
+
+    <span>Ejercicios JQuery</span>
+
+    <!--
+        <ol>
+            <li>Una caja de texto donde el usuario introduce la información.</li>
+
+            <li>Botón de añadir título H1 (Esta opción debe desaparecer al añadir el título, es decir, solo puede haber un
+                H1).</li>
+            <li>Botón cambiar H1 (Este botón solo debe aparecer si se ha introducido un H1).</li>
+            <li>Botón de añadir título H2.</li>
+            <li>Botón de añadir título H3.</li>
+            <li>Botón de añadir párrafo.</li>
+            <li>Botón para añadir imagenn desde url.</li>
+            <li>Botón para cambiar la fuente de texto de todo el artículo.</li>
+            <li>Botón para cambiar el color de fondo del artículo.</li>
+            <li>Botón para cambiar el color de todo el texto del artículo.</li>
+            <li>Botón "deshacer" que elimina el último elemento introducido en el artículo.</li>
+            <li>Botón para eliminar el artículo y empezar de 0.</li>
+            <li>Botón para alternar "modo oscuro" (fondo negro y texto blanco).</li>
+            <li>Botón para alternar entre mostrar imágenes o no [ Las imágenes deben desvanecerse ("fade") ].</li>
+        </ol>
+    !-->
+    <div id="articulo"></div>
+    <div id="entrada-div">
+        <input type="text" name="entrada" id="entrada" placeholder="Introduce información para agregar al artículo">
+    </div>
+    <div id="botones">
+        <button id="addH1">Agregar H1</button>
+        <button id="editH1">Cambiar contenido H1</button>
+        <button id="addH2">Agregar H2</button>
+        <button id="addH3">Agregar H3</button>
+        <button id="addP">Agregar Párrafo</button>
+        <button id="addImg">Agregar Imagen</button>
+        <button id="changeFont">Cambiar fuente</button>
+        <button id="changeBG">Cambiar color fondo</button>
+        <button id="changeColor">Cambiar color del texto</button>
+        <button id="deleteLast">Eliminar último elemento agregado</button>
+        <button id="resetArticle">Reiniciar artículo</button>
+        <button id="darkMode">Modo oscuro</button>
+        <button id="hideIMG">Toggle imagenes</button>
+    </div>
+    <script>
+        $(document).ready(function () {
+            if ($("articulo h1").length === 0) {
+                $("#addH1").show();
+                $("#editH1").hide();
+            }
+            $("#addH1").click(function () {
+                $("#articulo").append("<h1>" + $("#entrada").val() + "</h1>");
+                $("#addH1").hide();
+                $("#editH1").show();
+            });
+            $("#editH1").click(function () {
+                $("h1").text($("#entrada").val());
+            });
+            $("#addH2").click(function () {
+                $("#articulo").append("<h2>" + $("#entrada").val() + "</h2>");
+            });
+            $("#addH3").click(function () {
+                $("#articulo").append("<h3>" + $("#entrada").val() + "</h3>");
+            });
+            $("#addP").click(function () {
+                $("#articulo").append("<p>" + $("#entrada").val() + "</p>");
+            });
+            $("#addImg").click(function () {
+                var imagen = $("#entrada").val();
+                $("#articulo").append('<img src="' + imagen + '" alt="imagenn">');
+            });
+            $("#changeFont").click(function () {
+                $("#articulo").css({ 'font-family': $("#entrada").val() });
+            });
+            $("#changeBG").click(function () {
+                $("#articulo").css({ 'background-color': $("#entrada").val() });
+            });
+            $("#changeColor").click(function () {
+                $("#articulo").css({ 'color': $("#entrada").val() });
+            });
+            $("#deleteLast").click(function () {
+                $("#articulo").children().last().remove();
+            });
+            $("#resetArticle").click(function () {
+                $("#articulo").empty();
+            });
+            $("#darkMode").click(function () {
+                $("body").toggleClass("darkMode");
+            });
+            $("#hideIMG").click(function () {
+                $("#articulo img").fadeToggle();
+            });
+        });
+    </script>
+</body>
+
+</html>
+
+
+
