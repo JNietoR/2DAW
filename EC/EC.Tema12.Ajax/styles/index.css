@@ -5,3 +5,7 @@ body{
     background-size: cover;
 }
 
+.card-size{
+    width:300px !important;
+    height: 500px !important;
+}
