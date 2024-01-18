@@ -32,10 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         }
                     };
                 }
-            }
-
-            
-            
+            }    
         });
     });
 });
