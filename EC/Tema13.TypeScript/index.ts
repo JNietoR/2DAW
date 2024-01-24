@@ -139,17 +139,14 @@ function main(): void {
         }
     
         const enemigoAleatorio = generarEnemigoAleatorio();
-        console.log("Te has encontrado con:", enemigoAleatorio.getNombre());
-
+        console.log("Te has encontrado con: ", enemigoAleatorio.getNombre());
         if(jugador.getPuntos_ataque() >= enemigoAleatorio.getPuntos_ataque()) { 
-            let dineroActual=jugador.getDinero();
-            let dineroGanado=enemigoAleatorio.soltarDinero();
-            console.log("Has derrotado a "+enemigoAleatorio.getNombre()+" y has ganado"+dineroGanado);
-            
+            console.log("Has derrotado a "+enemigoAleatorio.getNombre()+" y has ganado"+enemigoAleatorio.soltarDinero());
+            jugador.setDinero(jugador.getDinero()+enemigoAleatorio.soltarDinero());
         }else{
-
+            console.log("Eres más debil que "+enemigoAleatorio.getNombre()+" y has perdido"+enemigoAleatorio.getPuntos_ataque()+"puntos de vida");
+            jugador.setPuntos_salud(jugador.getPuntos_salud()-enemigoAleatorio.getPuntos_ataque());
         }
-    
     }
 
     function comprarItems() {
