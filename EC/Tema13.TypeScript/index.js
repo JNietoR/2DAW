@@ -67,11 +67,11 @@ var Enemigo = /** @class */ (function () {
     return Enemigo;
 }());
 function main() {
-    var migue = new Enemigo("Migue Roso");
-    var ramirez = new Enemigo("Ramirez");
-    var pablo = new Enemigo("Pablo Motos");
-    var enemigos = [migue, ramirez, pablo];
-    var historia = "La historia comienza en el mundo conocido como Gaia, en donde la Reina Brahne Raza Alexandros XVI del reino de Alexandria ansía incrementar su poder bélico para conquistar los reinos vecinos e incrementar su territorio. La guerra pronto se desencadenará entre los pacíficos reinos del Continente de la Niebla. Garnet Von Alexandros XVII, hija adoptiva de la Reina Brahne, se encuentra deprimida por su posición real, más las incesantes pesadillas que tratan sobre un bote que navega ante un cielo con un misterioso ojo. Vivi Ornitier, un Mago Negro con apariencia de niño, camina solo por las calles de Alexandria, pretendiendo encontrar pistas acerca de sus origen y existencia.";
+    var garland = new Enemigo("Garland");
+    var exdeath = new Enemigo("Exdeath");
+    var sephiroth = new Enemigo("Sephiroth");
+    var enemigos = [garland, exdeath, sephiroth];
+    var historia = "Este juego reúne a héroes y villanos de diferentes entregas de la saga Final Fantasy. La trama gira en torno a dos deidades, Cosmos y Chaos, que convocan a guerreros de mundos paralelos para luchar en un conflicto cósmico. Cosmos busca la armonía y paz, mientras que Chaos busca la discordia y la destrucción. /n Los héroes convocados por Cosmos forman un grupo para enfrentarse a los secuaces de Chaos y restaurar el equilibrio. Sin embargo, cada batalla tiene consecuencias y, a medida que avanza la historia, los héroes descubren que sus acciones están ligadas a un ciclo sin fin de conflicto entre Cosmos y Chaos.";
     console.log(historia);
     console.log();
     var nombreJugador = readlineSync.question("Indroduce nombre del jugador: ");
@@ -139,8 +139,9 @@ function main() {
             console.log();
         }
         else {
-            console.log("Eres más debil que " + enemigoAleatorio.getNombre() + " y has perdido " + enemigoAleatorio.getPuntos_ataque() + " puntos de vida");
-            jugador.setPuntos_salud(jugador.getPuntos_salud() - enemigoAleatorio.getPuntos_ataque());
+            var daño = enemigoAleatorio.getPuntos_ataque() - jugador.getPuntos_ataque();
+            console.log("Eres más debil que " + enemigoAleatorio.getNombre() + " y has perdido " + daño + " puntos de vida");
+            jugador.setPuntos_salud(jugador.getPuntos_salud() - daño);
             if (jugador.getPuntos_salud() > 0) {
                 console.log('Tu estado actual es:' + jugador.toString());
                 mostrarMenu();
