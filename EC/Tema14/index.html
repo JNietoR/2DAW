@@ -30,14 +30,17 @@
              -->
             </ul>
         </div>
-        <div class="input">
-            <input type="text" name="book" id="book">
+        <div class="insert-input">
+            <label>Agregar Elemento</label><input type="text" name="book" id="book">
+        </div>
+        <div class="delete-input">
+            <label>Eliminar Elemento</label><input type="text" name="targetBook" id="targetBook">
         </div>
         <div class="botones">
-            <button id="set" onclick="setBook()">Agregar a la lista</button>
-            <button id="show" onclick="showBookList()">Mostrar contenido almacenado</button>
-            <button id="delete" onclick="deleteBooks()">Eliminar elementos</button>
-            <button id="clear" onclick="clearBookList()">Limpiar contenido </button>
+            <button id="set" onclick="setBook(event)">Agregar a la lista</button>
+            <button id="show" onclick="showBookList(event)">Mostrar contenido almacenado</button>
+            <button id="delete" onclick="deleteBook(event)">Eliminar elementos</button>
+            <button id="clear" onclick="clearBookList(event)">Limpiar contenido </button>
         </div>
 
     </div>
