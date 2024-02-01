@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es" manifest=”cache.appcache”>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Práctica Tema 14</title>
+    <link rel="stylesheet" href="./styles/index.css">
+
+</head>
+
+<body>
+    <!-- 
+        Crea una página web para organizar una lista (puede ser de la compra, videojuegos, etc) donde los datos son persistentes y permanentes usando localStorage:
+            Un botón donde podemos almacenar (setItem) los nombres, éstos deben aparecer en una lista
+            Un botón “mostrar contenido” para mostrar todos los valores almacenados en localStorage (JSON.stringify).
+            Eliminar elementos (delete) para poder borrar elementos de forma individual por su nombre
+            Limpiar el contenido (clear) para eliminar todos los elementos de la lista
+
+        Nota: Separa el estilo y el script en páginas diferentes al HTML ya que es necesario para el siguiente ejercicio.
+
+        Crea un archivo manifest para que la página pueda funcionar aunque no haya conexión. Usa XAMPP u otra aplicación para tener una conexión y probar su funcionamiento.
+    -->
+    <div class="container">
+        <h1>Libros pendientes</h1>
+        <div class="book-container">
+            <ul id="render">
+                <!-- 
+                Donde se mostrara la información almacenada en el localStorage
+             -->
+            </ul>
+        </div>
+        <div class="input">
+            <input type="text" name="book" id="book">
+        </div>
+        <div class="botones">
+            <button id="set" onclick="setBook()">Agregar a la lista</button>
+            <button id="show" onclick="showBookList()">Mostrar contenido almacenado</button>
+            <button id="delete" onclick="deleteBooks()">Eliminar elementos</button>
+            <button id="clear" onclick="clearBookList()">Limpiar contenido </button>
+        </div>
+
+    </div>
+
+    <script src="./js/index.js"></script>
+</body>
+
+</html>
