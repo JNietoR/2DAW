@@ -1,0 +1,5 @@
+#Manifest version 1.0
+CACHE Manifest
+index.html
+js/index.js
+styles/index.css
