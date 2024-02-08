@@ -1,0 +1,9 @@
+body {
+    background-image: url(https://cosmere.es/wp-content/uploads/2019/01/Constelaciones-mundos-cosmere.jpg);
+    background-repeat: repeat;
+    overflow-x: hidden;
+}
+.logo {
+    width: 30%;
+    height: 30%;
+}
