@@ -47,7 +47,6 @@
         </div>
       </div>
     </details>
-
     <!-- Fin Novelas secretas -->
 
 
@@ -68,6 +67,7 @@
             pendientes</button>
         </div>
       </div>
+      <!-- Fin formulario -->
 
       <!-- Details de libros leidos -->
       <details v-if="readedBooks.length > 0" class="flex flex-col items-center justify-center w-full">
@@ -87,6 +87,7 @@
           No has leído ningún libro
         </summary>
       </details>
+      <!--Fin details leidos-->
 
       <!-- Details de libros pendientes -->
       <details v-if="pendantBooks.length > 0" class="flex flex-col items-center justify-center w-full">
@@ -106,6 +107,7 @@
           No hay libros pendientes
         </summary>
       </details>
+      <!--Fin details pendientes -->
 
     </div>
 
@@ -156,5 +158,3 @@ const pendantBooks = ref([]);
 
 
 </script>
-
-<style scoped></style>
