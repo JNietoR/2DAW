@@ -1,7 +1,7 @@
 <template>
     <div class="text-white text-center">
 
-        <h1 class="m-auto my-8 text-4xl shadow-2xl shadow-black w-120">Sagas más famosas del Cosmere</h1>
+        <h1 class="m-auto my-8 text-4xl max-w-2xl md:max-w-3xl lg:max-w-4xl xl:max-w-5xl text-shadow-md">Sagas más famosas del Cosmere</h1>
 
         <!-- Archivo de las tormentas -->
         <details open class="flex flex-col items-center justify-center w-full">
@@ -12,7 +12,7 @@
             <div class="flex flex-row justify-center items-center">
                 <div v-for="(book, index) in stormlight" :key="index" class="flex flex-col items-center mx-4">
                     <a :href="book.link" target="_blank" rel="noopener noreferrer">
-                        <img :src="book.portrait" alt="Portada del libro" class="w-50 h-80 mb-2">
+                        <img :src="book.portrait" alt="Portada del libro" class="w-100 md:w-50 lg:w-60 h-auto mb-2">
                     </a>
                 </div>
             </div>
@@ -28,7 +28,8 @@
             <div class="flex flex-row justify-center items-center">
                 <div v-for="(book, index) in mistborn" :key="index" class="flex flex-col items-center mx-4">
                     <a :href="book.link" target="_blank" rel="noopener noreferrer">
-                        <img :src="book.portrait" alt="Portada del libro" class="w-50 h-80 mb-2">
+                        <img :src="book.portrait" alt="Portada del libro"
+                            class="w-full md:w-50 lg:w-60 h-auto mb-2 md:mb-0">
                     </a>
                 </div>
             </div>
@@ -44,7 +45,7 @@
             <div class="flex flex-row justify-center items-center">
                 <div v-for="(book, index) in secretBooks" :key="index" class="flex flex-col items-center mx-4">
                     <a :href="book.link" target="_blank" rel="noopener noreferrer">
-                        <img :src="book.portrait" alt="Portada del libro" class="w-50 h-80 mb-2">
+                        <img :src="book.portrait" alt="Portada del libro" class="w-100 md:w-50 lg:w-60 h-auto mb-2">
                     </a>
                 </div>
             </div>
@@ -64,9 +65,11 @@ const stormlight = [
 
 ];
 const mistborn = [
-    { id: 1, title: 'El imperio final', author: 'Brandon Sanderson', portrait: 'https://books.google.es/books/publisher/content?id=xKk4AwAAQBAJ&hl=es&pg=PP1&img=1&zoom=3&bul=1&sig=ACfU3U1VEl36I200TBcyiqXBjSP1_VSBIg&w=1280', link: 'https://www.google.es/books/edition/El_imperio_final_The_Final_Empire/OF-REAAAQBAJ?hl=es' },
-    { id: 2, title: 'El pozo de la ascensión', author: 'Brandon Sanderson', portrait: 'https://books.google.es/books/publisher/content?id=-684AwAAQBAJ&hl=es&pg=PP1&img=1&zoom=3&bul=1&sig=ACfU3U1d1ZKvQHKyMRm7GCYk-RqbNmpjGQ&w=1280', link: 'https://www.google.es/books/edition/Pack_El_Imperio_Final_El_Pozo_de_la_Asce/6kqgDwAAQBAJ?hl=es&gbpv=0' },
-    { id: 3, title: 'El heróe de las eras', author: 'Brandon Sanderson', portrait: 'https://m.media-amazon.com/images/I/81c5VPXgDqL._AC_UF894,1000_QL80_.jpg', link: 'https://www.google.es/books/edition/El_h%C3%A9roe_de_las_eras_The_Hero_of_Ages/4G-REAAAQBAJ?hl=es' },
+    { id: 1, title: 'El imperio final', author: 'Brandon Sanderson', portrait: 'https://m.media-amazon.com/images/I/911Ug7hsR4L._SL1500_.jpg', link: 'https://www.google.es/books/edition/El_imperio_final_The_Final_Empire/OF-REAAAQBAJ?hl=es' },
+    { id: 2, title: 'El pozo de la ascensión', author: 'Brandon Sanderson', portrait: 'https://m.media-amazon.com/images/I/81r+t7Tdv-L._SL1500_.jpg', link: 'https://www.google.es/books/edition/Pack_El_Imperio_Final_El_Pozo_de_la_Asce/6kqgDwAAQBAJ?hl=es&gbpv=0' },
+    { id: 3, title: 'El heróe de las eras', author: 'Brandon Sanderson', portrait: 'https://m.media-amazon.com/images/I/81c5VPXgDqL._SL1500_.jpg', link: 'https://www.google.es/books/edition/El_h%C3%A9roe_de_las_eras_The_Hero_of_Ages/4G-REAAAQBAJ?hl=es' },
+    { id: 4, title: 'Alación de ley', author: 'Brandon Sanderson', portrait: 'https://m.media-amazon.com/images/I/81tA+z79OAL._SL1500_.jpg', link: 'https://books.google.es/books?id=Xd04AwAAQBAJ&printsec=frontcover&hl=es&source=gbs_ge_summary_r&cad=0#v=onepage&q&f=false' },
+
 
 ];
 const secretBooks = [
@@ -77,4 +80,8 @@ const secretBooks = [
 
 ];
 </script>
-  
+<style scoped>
+.text-shadow-md {
+  text-shadow: 10px 10px 10px #b67600, -10px -10px 10px #b67600, 10px -10px 10px #b67600, -10px 10px 10px #b67600;
+}
+</style>

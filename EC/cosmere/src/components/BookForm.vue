@@ -1,7 +1,7 @@
 <template>
     <div>
       <div id="bookForm-container" class="flex flex-col items-center justify-center w-full">
-        <h1 class="m-auto my-8 text-4xl shadow-2xl shadow-black w-120">Gestiona el estado de tus libros</h1>
+        <h1 class="m-auto my-8 text-4xl shadow-2xl shadow-black w-120 text-shadow-md ">Gestiona el estado de tus libros</h1>
   
         <!-- Formulario para introducir libros en leído o pendiente usando v-if, v-else, v-for, v-model y v-bind -->
         <div id="form-container">
@@ -80,4 +80,8 @@
   const readedBooks = ref([]);
   const pendantBooks = ref([]);
   </script>
-  
+  <style scoped>
+  .text-shadow-md {
+    text-shadow: 10px 10px 10px #b67600, -10px -10px 10px #b67600, 10px -10px 10px #b67600, -10px 10px 10px #b67600;
+  }
+  </style>
